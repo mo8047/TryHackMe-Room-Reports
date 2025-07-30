@@ -1,0 +1,44 @@
+#Secion 1
+
+**Intro to LAN topoligies.**
+
+
+LAN stands for local area network
+
+**Star Topology**
+The Star topology refers to a central network where devices connect to and communicate through. Issues consist of high maintainance when it's scalled and issues when failure,
+although the star topology is robust therefore it's hard for it to fail.
+
+**Bus Topology**
+Bus Topology is when and entire network is connected through a single cable. Like a tree where the computers are the leaves and they are connected through the stem.
+An area of failure is when each computer requests data simelaneousley the topology is prone to becoming slow, although they are cheap to set up and maintain.
+
+**Ring Topology""
+Ring topology is when computers are connected with eachother in a ring. Unlike Bus topology they are less prone to bottleecks because the data sent is one directional so it
+has to pass a computer before reaching it's intended location, they are also easy to troubleshoot because they are one-directional so it's easier to dissect and find the issues.
+A point of failure is if a cable is cut or broken then the entire network fails.
+
+**Switch**
+Switches are primarily found in large businesses, schools or organizations places where there are a lot of connected devices. Switches are used to aggregate multiple devices
+such as computers, printers, phones, etc at once using a single ethernet.
+
+In this excercise was a mock site which explained LAN topologies, their weaknesses and capture the flag.
+
+**Router**
+It's a router's job to connect networks and pass data between them as the name suggests routing.
+
+#Section 2
+
+A primer on subnetting
+
+Subnetting splits the network  into smaller miniature networkswhithin itself to sort of streamline taske efficiently and make the load on the network lower.
+Usually found in businesses where they have a large amount of devices connected to their network, think printers, phones, computers and cameras.
+Subnets use the IP address to 
+1. Indentify the network address
+2. Identify the Host address
+3. Identify the default gateway
+
+Each of these networks is reponsible for their own set of tasks, where the Network address identifies the start of the actual network and identify the network's existence.
+Whereas Host networks uses a device IP to identify a device on the subnet and the default gateway is a special address assigned on the network that is capable of sending 
+information to another network.
+
