@@ -1,44 +1,79 @@
-#Secion 1
+Section 1: Intro to LAN Topologies
+LAN (Local Area Network):
+A network that connects devices within a limited area such as a home, school, or office.
 
-**Intro to LAN topoligies.**
+Star Topology
+Devices connect to a central hub or switch.
 
+Pros: Easy to manage, robust—failure in one device doesn't affect others.
 
-LAN stands for local area network
+Cons: Central point of failure; expensive and complex to scale.
 
-**Star Topology**
-The Star topology refers to a central network where devices connect to and communicate through. Issues consist of high maintainance when it's scalled and issues when failure,
-although the star topology is robust therefore it's hard for it to fail.
+Bus Topology
+All devices share a single communication line (like leaves on a stem).
 
-**Bus Topology**
-Bus Topology is when and entire network is connected through a single cable. Like a tree where the computers are the leaves and they are connected through the stem.
-An area of failure is when each computer requests data simelaneousley the topology is prone to becoming slow, although they are cheap to set up and maintain.
+Pros: Cheap and easy to set up.
 
-**Ring Topology""
-Ring topology is when computers are connected with eachother in a ring. Unlike Bus topology they are less prone to bottleecks because the data sent is one directional so it
-has to pass a computer before reaching it's intended location, they are also easy to troubleshoot because they are one-directional so it's easier to dissect and find the issues.
-A point of failure is if a cable is cut or broken then the entire network fails.
+Cons: Prone to bottlenecks when multiple devices transmit simultaneously; one failure can affect the whole network.
 
-**Switch**
-Switches are primarily found in large businesses, schools or organizations places where there are a lot of connected devices. Switches are used to aggregate multiple devices
-such as computers, printers, phones, etc at once using a single ethernet.
+Ring Topology
+Devices form a closed loop; data travels in one direction.
 
-In this excercise was a mock site which explained LAN topologies, their weaknesses and capture the flag.
+Pros: Less congestion, easy to trace errors.
 
-**Router**
-It's a router's job to connect networks and pass data between them as the name suggests routing.
+Cons: One cable break can bring down the entire network.
 
-#Section 2
+Switch
+Used in networks with many devices (e.g., businesses or schools).
 
-A primer on subnetting
+Aggregates connections (computers, printers, etc.) through Ethernet ports.
 
-Subnetting splits the network  into smaller miniature networkswhithin itself to sort of streamline taske efficiently and make the load on the network lower.
-Usually found in businesses where they have a large amount of devices connected to their network, think printers, phones, computers and cameras.
-Subnets use the IP address to 
-1. Indentify the network address
-2. Identify the Host address
-3. Identify the default gateway
+Operates on Layer 2 (Data Link Layer) of the OSI model.
 
-Each of these networks is reponsible for their own set of tasks, where the Network address identifies the start of the actual network and identify the network's existence.
-Whereas Host networks uses a device IP to identify a device on the subnet and the default gateway is a special address assigned on the network that is capable of sending 
-information to another network.
+Router
+Connects different networks and routes data between them.
 
+Used to connect LANs to the internet or other networks.
+
+Section 2: Subnetting Primer
+Subnetting = Splitting a network into smaller, more manageable segments.
+
+Purpose:
+
+Improves efficiency, security, and traffic management.
+
+Used in large networks (e.g., corporations) to organize devices.
+
+Key Components:
+
+Network Address – Identifies the subnet.
+
+Host Address – Identifies specific devices in that subnet.
+
+Default Gateway – The access point/router for leaving the subnet and reaching other networks.
+
+Section 3: ARP (Address Resolution Protocol)
+Purpose:
+Links IP addresses to MAC (hardware) addresses within a network.
+
+How It Works:
+
+Each device keeps a table (ARP cache) of known IP-to-MAC mappings.
+
+If a device wants to send data, but doesn’t know the recipient’s MAC, it sends an ARP Request.
+
+The correct device replies with an ARP Reply, and the data link is established.
+
+Section 4: DHCP (Dynamic Host Configuration Protocol)
+Purpose:
+Automatically assigns IP addresses to devices joining a network.
+
+Process:
+
+DHCP Discover – Device asks if any DHCP servers are available.
+
+DHCP Offer – Server responds with an available IP address.
+
+DHCP Request – Device requests to use that IP.
+
+DHCP ACK – Server confirms and finalizes the lease.
