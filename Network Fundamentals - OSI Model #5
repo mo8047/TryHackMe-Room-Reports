@@ -1,0 +1,63 @@
+OSI Model – THM Room Report
+Section 1 – What is the OSI Model?
+The OSI (Open Systems Interconnection) model is a foundational framework in networking. It defines how data is sent, received, and interpreted between systems on a network — regardless of hardware or software differences.
+
+It has 7 layers, each with distinct responsibilities, from physical transmission to user interaction.
+
+Section 2 – Layer 1: Physical
+The Physical layer deals with the actual hardware — cables, switches, voltage levels. Data is transmitted in binary (1s and 0s) through electrical or optical signals.
+
+Section 3 – Layer 2: Data Link
+Responsible for MAC addressing and physical addressing. Every device has a NIC (Network Interface Card) with a unique MAC address burned into it.
+
+This layer handles frame formatting and ensures the data is ready for transmission on the physical layer. It also detects basic transmission errors.
+
+Section 4 – Layer 3: Network
+Handles routing and logical addressing via IP addresses (e.g., 192.168.1.1). Determines the best path for data packets using protocols like OSPF and RIP.
+
+This is where routers (Layer 3 devices) operate.
+
+Routing decisions consider:
+
+Shortest path
+
+Reliability
+
+Physical medium speed (fiber vs. copper)
+
+Section 5 – Layer 4: Transport
+Manages end-to-end delivery and reliability through two main protocols:
+
+TCP (Transmission Control Protocol)
+
+Reliable, connection-oriented
+
+Error checking and correction
+
+Slower but accurate (used in emails, web browsing)
+
+UDP (User Datagram Protocol)
+
+Fast, connectionless
+
+No guarantee of delivery
+
+Used in streaming, gaming, DNS queries
+
+Section 6 – Layer 5: Session
+Manages sessions between devices — establishes, maintains, and terminates them. Also handles checkpoints to resume transfers if interrupted.
+
+Sessions are unique and isolated from each other.
+
+Section 7 – Layer 6: Presentation
+Acts as a translator between different systems. It ensures data is in a usable format, regardless of how different applications handle it.
+
+Handles encryption/decryption, compression, and formatting (e.g., JPEG, ASCII, HTML, etc.).
+
+Section 8 – Layer 7: Application
+The closest layer to the user. Defines protocols for apps like browsers, email clients, FTP clients, etc.
+
+Also handles DNS (domain name resolution), HTTP/S, SMTP, etc.
+
+Section 9 – Room Activity
+The room included a quiz-style game where the player had to correctly match data scenarios to the corresponding OSI layer (1–7).
