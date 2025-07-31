@@ -1,0 +1,27 @@
+Section 1: What Are Packets and Frames?
+Packets and frames are chunks of data used to transmit information over a network, but they exist at different layers of the OSI model:
+
+Frame (Layer 2 – Data Link Layer):
+Contains MAC addresses and operates within a local network segment. No IP addresses involved.
+Think of it like the inner envelope.
+
+Packet (Layer 3 – Network Layer):
+Contains IP addresses. Used for routing data between different networks.
+This is the outer envelope used to mail the message.
+
+This structure is called encapsulation—data is wrapped in multiple layers of headers and trailers as it moves through the network stack.
+
+Why Use Packets?
+Efficiency: Data is broken into smaller pieces to avoid network congestion.
+
+Reassembly: Like puzzle pieces, packets are reassembled on the receiving end.
+
+Example:
+A cat image from a website is broken into packets → each travels independently → reassembled into the full image on your device.
+
+Packet Structure (IP Example)
+Header	Description
+Time to Live (TTL)	Prevents a packet from circulating forever. Counts down each hop.
+Checksum	Ensures data integrity. Detects corruption in transmission.
+Source Address	The sender’s IP address.
+Destination Address	The recipient’s IP address.
