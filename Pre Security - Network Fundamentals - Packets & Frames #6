@@ -1,5 +1,5 @@
 Section 1: Packets & Frames
-🔹 Packets vs. Frames (OSI Model)
+Packets vs. Frames (OSI Model)
 Frame (Layer 2 – Data Link):
 Used for communication within the local network.
 Contains MAC addresses (no IP).
@@ -36,7 +36,7 @@ Internet
 Network Interface
 
 TCP vs UDP
-🔹 TCP (Transmission Control Protocol)
+TCP (Transmission Control Protocol)
 Connection-based (uses 3-way handshake).
 
 Guarantees data delivery, order, and integrity.
@@ -56,7 +56,7 @@ Checksum
 
 Data
 
-📶 TCP 3-Way Handshake
+TCP 3-Way Handshake
 SYN (Client → Server): Initiates connection.
 
 SYN/ACK (Server → Client): Accepts and syncs.
@@ -68,7 +68,7 @@ ACK (Client → Server): Confirms.
 FIN → ACK → FIN → ACK
 Both sides cleanly agree to close the connection.
 
-🔹 UDP (User Datagram Protocol)
+UDP (User Datagram Protocol)
 Stateless, connectionless.
 
 No guarantees of delivery or order.
@@ -95,7 +95,7 @@ Numerical values between 0–65535.
 
 Well-known ports: 0–1023 (standardized)
 
-🔑 Common Ports
+Common Ports
 Protocol	Port	Use
 FTP	21	File sharing
 SSH	22	Secure remote shell
