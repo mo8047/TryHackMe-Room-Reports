@@ -1,27 +1,106 @@
-Section 1: What Are Packets and Frames?
-Packets and frames are chunks of data used to transmit information over a network, but they exist at different layers of the OSI model:
+Section 1: Packets & Frames
+🔹 Packets vs. Frames (OSI Model)
+Frame (Layer 2 – Data Link):
+Used for communication within the local network.
+Contains MAC addresses (no IP).
+Think: Inner envelope.
 
-Frame (Layer 2 – Data Link Layer):
-Contains MAC addresses and operates within a local network segment. No IP addresses involved.
-Think of it like the inner envelope.
+Packet (Layer 3 – Network):
+Used for routing between networks.
+Contains IP addresses.
+Think: Outer envelope.
 
-Packet (Layer 3 – Network Layer):
-Contains IP addresses. Used for routing data between different networks.
-This is the outer envelope used to mail the message.
-
-This structure is called encapsulation—data is wrapped in multiple layers of headers and trailers as it moves through the network stack.
+→ Encapsulation: Data is wrapped in headers at each OSI layer. Reverse process = decapsulation.
 
 Why Use Packets?
-Efficiency: Data is broken into smaller pieces to avoid network congestion.
+Efficiency: Splits data to avoid congestion.
 
-Reassembly: Like puzzle pieces, packets are reassembled on the receiving end.
-
-Example:
-A cat image from a website is broken into packets → each travels independently → reassembled into the full image on your device.
+Reassembly: Receiver reconstructs the original data (e.g., image or video).
 
 Packet Structure (IP Example)
 Header	Description
-Time to Live (TTL)	Prevents a packet from circulating forever. Counts down each hop.
-Checksum	Ensures data integrity. Detects corruption in transmission.
-Source Address	The sender’s IP address.
-Destination Address	The recipient’s IP address.
+TTL	Limits packet lifespan across networks.
+Checksum	Verifies integrity (detects corruption).
+Source IP	Origin device address.
+Destination IP	Target device address.
+
+TCP/IP vs OSI
+TCP/IP model = simplified OSI (4 layers):
+
+Application
+
+Transport
+
+Internet
+
+Network Interface
+
+TCP vs UDP
+🔹 TCP (Transmission Control Protocol)
+Connection-based (uses 3-way handshake).
+
+Guarantees data delivery, order, and integrity.
+
+Slower but reliable.
+
+Key TCP Headers:
+Source/Destination Port
+
+Source/Destination IP
+
+Sequence & Acknowledgment Number
+
+Flags (SYN, ACK, FIN, RST)
+
+Checksum
+
+Data
+
+📶 TCP 3-Way Handshake
+SYN (Client → Server): Initiates connection.
+
+SYN/ACK (Server → Client): Accepts and syncs.
+
+ACK (Client → Server): Confirms.
+→ Then data can be exchanged.
+
+🔚 TCP Termination
+FIN → ACK → FIN → ACK
+Both sides cleanly agree to close the connection.
+
+🔹 UDP (User Datagram Protocol)
+Stateless, connectionless.
+
+No guarantees of delivery or order.
+
+Faster, used where speed > reliability (e.g., video, voice).
+
+UDP Headers:
+TTL
+
+Source/Destination IP
+
+Source/Destination Port
+
+Data
+
+UDP Pros:
+Lightweight, fast, no connection overhead.
+
+UDP Cons:
+No delivery/ordering guarantee, bad on poor connections.
+
+Ports
+Numerical values between 0–65535.
+
+Well-known ports: 0–1023 (standardized)
+
+🔑 Common Ports
+Protocol	Port	Use
+FTP	21	File sharing
+SSH	22	Secure remote shell
+HTTP	80	Web (unencrypted)
+HTTPS	443	Web (encrypted)
+SMB	445	File/printer sharing
+RDP	3389	Remote desktop GUI
+
