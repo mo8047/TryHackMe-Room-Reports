@@ -1,103 +1,135 @@
-# 🧠 TryHackMe – Networking Fundamentals (Summarized Notes)
+Packets vs. Frames
+Packets and frames are units of data used in network communication, but at different OSI layers.
 
-## 📦 Packets vs. Frames
+Packet – OSI Layer 3 (Network Layer). Includes IP addresses and is used to route data across networks.
 
-| Term   | OSI Layer | Description                                           |
-|--------|-----------|-------------------------------------------------------|
-| Packet | Layer 3    | Contains IP header & payload. Routes across networks. |
-| Frame  | Layer 2    | Wraps packet with MAC info for local delivery.        |
+Frame – OSI Layer 2 (Data Link Layer). Wraps packets with MAC address info for local delivery.
 
-- **Encapsulation:** Like mailing a letter—frame is envelope, packet is letter.
-- Packets split large data into chunks to reduce congestion.
-- Headers in IP packets include:
-  - **TTL** – Packet expiration.
-  - **Checksum** – Corruption detection.
-  - **Source IP** / **Destination IP** – Routing info.
+Encapsulation: Think of a packet inside a frame like a letter inside an envelope. The envelope (frame) gets opened to reveal the letter (packet).
 
----
+Why packets? Splitting data into smaller pieces avoids bottlenecks and makes transmission more efficient.
 
-## 🔁 TCP/IP Model & Three-Way Handshake
+IP Packet Header Fields
+Time to Live (TTL): Prevents packets from circulating endlessly.
 
-### 🧱 TCP/IP Layers
-1. Application  
-2. Transport  
-3. Internet  
-4. Network Interface
+Checksum: Used for error checking.
 
-### 📡 TCP – Reliable, Connection-Based
-- Uses **3-Way Handshake**:
-  1. `SYN` – Client initiates
-  2. `SYN/ACK` – Server acknowledges
-  3. `ACK` – Client confirms
+Source IP: Where the packet came from.
 
-- **Headers in TCP Packets**:
-  - Source/Destination Port
-  - IPs
-  - Sequence & Acknowledgement Number
-  - Checksum
-  - Flags: `SYN`, `ACK`, `FIN`, `RST`
-  - Data
+Destination IP: Where the packet is going.
 
-### 📉 TCP Pros & Cons
-| Pros                         | Cons                                     |
-|-----------------------------|------------------------------------------|
-| Guarantees delivery         | Slower due to overhead                   |
-| Synchronization of devices  | Blocks if a packet is lost               |
-| High reliability            | More resource usage                      |
+TCP/IP Model and the Three-Way Handshake
+TCP/IP Layers
+Application
 
-### 🔚 TCP Connection Closing
-- `FIN` sent → ACK → connection closed.
+Transport
 
----
+Internet
 
-## ⚡ UDP – Fast, Stateless
+Network Interface
 
-- No connection setup (no handshake).
-- Used in gaming, streaming, VoIP.
-- Doesn’t guarantee delivery or order.
+TCP – Transmission Control Protocol
+TCP is a reliable, connection-based protocol. It uses the three-way handshake:
 
-### 🧩 UDP Packet Headers:
-- TTL
-- Source/Destination IP
-- Source/Destination Port
-- Data
+SYN – Client sends request to start communication
 
-### 📉 UDP Pros & Cons
-| Pros               | Cons                          |
-|--------------------|-------------------------------|
-| Very fast          | No delivery guarantees        |
-| Low resource use   | Data loss can occur easily    |
+SYN/ACK – Server acknowledges and responds
 
----
+ACK – Client confirms
 
-## 🔌 Ports 101
+TCP Packet Structure
+Source and destination ports
 
-- Ports range: **0–65535**
-- **Common (Well-Known) Ports: 0–1023**
+Source and destination IP addresses
 
-### 🔒 Common Ports
+Sequence and acknowledgement numbers
 
-| Protocol | Port | Purpose                          |
-|----------|------|----------------------------------|
-| FTP      | 21   | File transfer                    |
-| SSH      | 22   | Remote shell                     |
-| HTTP     | 80   | Web (unencrypted)                |
-| HTTPS    | 443  | Web (encrypted)                  |
-| SMB      | 445  | File/printer sharing             |
-| RDP      | 3389 | Remote desktop                   |
+Checksum
 
-> ⚠️ Non-standard ports require explicit mention, e.g., `http://IP:8080`
+Flags (SYN, ACK, FIN, RST)
 
----
+Data payload
 
-## 🧪 Practicals (Summary)
+TCP Pros and Cons
+Pros:
 
-- **TCP Handshake Simulation:** Practiced using `SYN`, `ACK`, `FIN`.
-- **UDP Overview:** Compared to TCP.
-- **Port Challenge:** Connected to IP `8.8.8.8` on port `1234` via terminal to retrieve a flag.
+Guarantees delivery
 
----
+Orders packets
 
-📁 Recommended filename: `networking_basics.md`
-✅ Ready for GitHub repo: `tryhackme-notes/networking_basics.md`
+Reliable
+
+Cons:
+
+Slower due to connection setup and error checking
+
+More overhead
+
+Can block if packets are lost
+
+TCP Connection Closing
+Uses FIN and ACK packets to terminate the session.
+
+UDP – User Datagram Protocol
+UDP is a fast, connectionless protocol. No handshake, no guarantees.
+
+Used in:
+
+Online games
+
+VoIP
+
+Streaming
+
+UDP Packet Fields
+TTL
+
+Source and destination IP
+
+Source and destination port
+
+Data
+
+UDP Pros and Cons
+Pros:
+
+Fast
+
+Low resource usage
+
+Cons:
+
+No guaranteed delivery
+
+No ordering
+
+No error recovery
+
+Ports Overview
+Ports range from 0 to 65535.
+Ports 0–1023 are well-known ports.
+
+Common Ports
+FTP: 21
+
+SSH: 22
+
+HTTP: 80
+
+HTTPS: 443
+
+SMB: 445
+
+RDP: 3389
+
+Non-standard ports (like 8080) need to be specified explicitly in URLs.
+
+Practice Summary
+Simulated TCP handshakes (SYN, ACK, FIN)
+
+Compared TCP vs. UDP
+
+Identified open ports on given IPs
+
+Connected to IP 8.8.8.8 on port 1234 to retrieve a flag
 
