@@ -1,0 +1,72 @@
+**Section 1
+
+What is DNS
+
+Domain Name System, is an internet system which instead of a user remembering the IP address of a website rather they can only 
+remember the DNS which can be bought by the site operator making it easier for the user to remember the website.
+
+**Section2
+
+Domain Hierarchy
+
+Domains are divided into 4 different types.
+
+1.  Root Domain
+
+2.  TLD (Top Lever Domain): Which is the website's ending like .com or .edu and each TLD represents a certain purpose like the .gov TLD is for government use and 
+TLD are divided into ccTLD(Country Code Top Lever Domain) which is a specific country's ending TLD like .ca, .iq etc. and gTLD(Generic Top Level Domain) which is 
+the normal .com, .gov, .org etc.
+
+3.  Second Level Domain: Which is the left part of the website's DNS like 'github'.com or 'google'.com etc. And from Second Level Domains we aldo get Sub-Domains 
+which are specific domains that are accessible through the Second Level Domain like 'blog'.example.com
+
+**Section 3 
+
+DNS Record Types
+ 
+
+DNS isn't just for websites though, and multiple types of DNS record exist. We'll go over some of the most common ones that you're likely to come across.
+
+A Record
+
+These records resolve to IPv4 addresses, for example 104.26.10.229
+
+AAAA Record
+
+These records resolve to IPv6 addresses, for example 2606:4700:20::681a:be5
+
+CNAME Record
+
+These records resolve to another domain name, for example, TryHackMe's online shop has the subdomain name store.tryhackme.com which returns a CNAME record 
+shops.shopify.com. Another DNS request would then be made to shops.shopify.com to work out the IP address.
+
+MX Record
+
+These records resolve to the address of the servers that handle the email for the domain you are querying, for example an MX record response for 
+tryhackme.com would look something like alt1.aspmx.l.google.com. These records also come with a priority flag. This tells the client in which order to try the servers, 
+this is perfect for if the main server goes down and email needs to be sent to a backup server.
+
+TXT Record
+
+TXT records are free text fields where any text-based data can be stored. TXT records have multiple uses, but some common ones can be to list servers that have the 
+authority to send an email on behalf of the domain (this can help in the battle against spam and spoofed email). They can also be used to verify ownership of the 
+domain name when signing up for third party services.
+
+
+**Section 4
+
+Making a Request
+
+When making a request to a DNS the data is sent to a recursive DNS server that saves all the most visited websites and stores it there
+if the DNS is not found in the recursive server it'll contact the root server to find the DNS and look up all possible Second level Domains
+which will be connected to the main Authoritative server that is responsible for storing the DNS records and after this new website is accessed
+a TTL(Time to Live) order will be set by the cache to keep the DNS on standby incase it is accessed again
+
+**Section 5
+
+Practical
+
+In this practical we had to use different DNS record types in the terminal to retrieve flags or IP addresses etc.
+
+We used the A record to retrieve the IP address of the website, the CNAME record to retieve the website original DNS, The numerical priority in the MX record 
+and the flag from the terminal through the TXT record
