@@ -1,0 +1,45 @@
+##Section 1 
+
+How The Web Works.
+
+When visiting a website the the browser requests the web server about information of the website being visited, it'll respond with data for the browser to show the website.
+There are 2 aspects that make up a website:
+1.  Front end: This is what your browser shows you
+2.  Back end: This is what goes in the backgroung to process your request
+
+##Section 2
+
+HTML
+
+HTML (Hyper Text Markup Language) is the language websites are written in. The HTML tags are the building blocks of the pages and tell the browser gow to 
+display content.
+
+There are many HTML tage with different jobs for example the <HTML> tag is the root of HTML and won't render without it, the <head> tag defines the document, 
+<body> tag defines the code and everything written here is visible to the website the rest isn't.
+
+In this exercise we did a practical modifying some HTML code to view images.
+
+##Section 3
+
+Javascript
+
+Jaascript is a coding language that allows pages to become interactive HTML is used to create website structure CSS is used for designing and Javascript is used for 
+interactivity. Without javascript the pages would be static and not interactive.
+
+In this section we did a practical where we modified HTML code and added Javascript and HTML elements to it.
+
+##Section 4
+
+Sensetive Data Exposure
+
+In this practical I was taught how dangerous it is to store data on the HTML code and how people with malicious intent can check the HTML
+tags for sensetive information and access the website fully.
+
+##Section 5
+
+HTML Injection 
+
+HTML injection is a vulnerability when unifiltered user input is displayed on the page. If a website fails to sanitise user input and that input is used on the page, 
+an attacker can inject HTML code into a vulnerable website.
+
+In this practical we did an example where we injected an HTML link and retrieved a flag from the website.
