@@ -1,0 +1,45 @@
+##Section 1 
+
+Putting it All Together
+
+when you request a website, your computer needs to know the server's IP address it needs to talk to; for this, it uses DNS. Your computer then talks to the web server using 
+a special set of commands called the HTTP protocol; the webserver then returns HTML, JavaScript, CSS, Images, etc., which your browser then uses to correctly format and 
+display the website to you.
+
+##Section 2 
+
+Other Components
+
+Load Balancer
+
+A load balancer can be summed up as a traffic divider for high volume websites. The load balamcer will take the server with the lowest traffic and direct the client to it 
+therefore reducing the overall load on the servers.
+The load balncer also does periodic checkups on servers called health checks to ee whether the server work fine or not.
+
+CDN
+
+A content delivery network is a great resource for cutting down traffic to a website by allowing the user to host static files such as JS, CSS, Images, Videos to host them
+across servers all over the world. When a user requests a file the CDN finds the closest physical server to the user instead of the server being all over the world.
+
+Databases
+
+Webservers communicate with databases to store information for the user. They are used to store and recall data. The range from simple
+text databases to complex clusters of multiple servers providing speed and resilience.
+
+WAF
+
+A Web Application Fireawall sits between the host and client. its primary purpose is to protect the webserver from hacking or dos attacks. it anlyses the request 
+and determines whether the request is from a person or a bot. It can block request for good if it suspects that the request is malicious.
+
+##Section 3
+
+How a Web Server Works
+
+A web server is software that stores website files and delivers them to users' browsers. It uses the HTTP protocol to handle requests for content like images, HTML, 
+and other files. Common examples of web server software include Apache and Nginx.
+
+##Section 4
+
+The Quiz
+
+In this practicl we laid out the format from when the user requests the website to the browser rendering the website step by step getting into detail.
