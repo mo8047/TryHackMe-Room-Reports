@@ -1,10 +1,10 @@
-#Section 1 
+# Section 1 
 
 Introduction
 
 This was an introduction to what we will be doing in this series, including running Linux commands, etc.
 
-##Section 2 
+## Section 2 
 
 A Bit of Background on Linux
 
@@ -20,14 +20,14 @@ Flavors of Linux
 Linux holds multiple OS's known as distributions.
 Just like Windows has Windows 7, 8, 10, etc, Linux has hundreds of distributions, like Ubuntu and Kali, used for different tasks.
 
-##Section 3
+## Section 3
 
 
 Interacting With Your First Linux Machine (In-Browser)
 
 In this section, we opened a Linux terminal and interacted with it.
 
-##Section 4
+## Section 4
 
 Running Your First Few Commands
 
@@ -37,7 +37,7 @@ In this example, we were taught some Linux terminal commands
 echo	: Output any text that we provide
 whoami	: Find out what user we're currently logged in as!
 
-##Section 5
+## Section 5
 
 Interacting With the Filesystem!
 
@@ -51,7 +51,7 @@ Changing Our Current Directory (cd)
 Outputting the Contents of a File (cat)
 Finding out the full Path to our Current Working Directory (pwd)
 
-##Section 6
+## Section 6
 
 Searching for Files
 
@@ -59,7 +59,7 @@ Searching for Files
 1.  find
 2.  grep
 
-##Section 7
+## Section 7
 
 An Introduction to Shell Operations.
 
@@ -82,7 +82,7 @@ Operator ">>"
 This operator is also an output redirector, like the previous operator (>) we discussed. However, what makes this operator different is that rather than overwriting 
 any contents within a file
 
-##Section 8
+## Section 8
 
 Concluions & Summaries
 
