@@ -1,0 +1,96 @@
+##Section 1 
+
+Introduction
+
+This was an introduction to what we will be doing in this series, including running Linux commands, etc.
+
+##Section 2 
+
+A Bit of Background on Linux
+
+Where is Linux used?
+Linux is used in our day-to-day life without us knowing, like in
+Websites that you visit
+Car entertainment/control panels
+Point of Sale (PoS) systems, such as checkout tills and registers in shops
+Critical infrastructures such as traffic light controllers or industrial sensors
+
+Flavors of Linux
+
+Linux holds multiple OS's known as distributions.
+Just like Windows has Windows 7, 8, 10, etc, Linux has hundreds of distributions, like Ubuntu and Kali, used for different tasks.
+
+##Section 3
+
+
+Interacting With Your First Linux Machine (In-Browser)
+
+In this section, we opened a Linux terminal and interacted with it.
+
+##Section 4
+
+Running Your First Few Commands
+
+Linux, unlike other OS's, doesn't have a GUI therefore, interacting with the machine will be done through the Terminal
+In this example, we were taught some Linux terminal commands
+
+echo	: Output any text that we provide
+whoami	: Find out what user we're currently logged in as!
+
+##Section 5
+
+Interacting With the Filesystem!
+
+ls	listing
+cd	change directory
+cat	concatenate
+pwd	print working directory
+
+Listing Files in Our Current Directory (ls)
+Changing Our Current Directory (cd)
+Outputting the Contents of a File (cat)
+Finding out the full Path to our Current Working Directory (pwd)
+
+##Section 6
+
+Searching for Files
+
+2 commands help us ease the search for files
+1.  find
+2.  grep
+
+##Section 7
+
+An Introduction to Shell Operations.
+
+&	This operator allows you to run commands in the background of your terminal.
+&&	This operator allows you to combine multiple commands in one line of your terminal.
+>	This operator is a redirector, meaning that we can take the output from a command (such as using cat to output a file) and direct it elsewhere.
+>>	This operator does the same function as the > operator but appends the output rather than replacing (meaning nothing is overwritten).
+
+Operato "&"
+The "&" shell operator allows us to execute a command and have it run in the background (such as this file copy), allowing us to do other things!
+
+Operator "&&"
+This shell operator is a bit misleading in the sense of how familiar it is to its partner "&". Unlike the "&" operator, we can use "&&" to make a list of commands to 
+run, for example, command1 && command2. However, it's worth noting that command2 will only run if command1 was successful.
+
+Operator ">"
+This operator is what's known as an output redirector. What this essentially means is that we take the output from a command we run and send that output somewhere else.
+
+Operator ">>"
+This operator is also an output redirector, like the previous operator (>) we discussed. However, what makes this operator different is that rather than overwriting 
+any contents within a file
+
+##Section 8
+
+Concluions & Summaries
+
+To quickly recap, we've covered the following:
+
+Understanding why Linux is so commonplace today
+Interacting with your first-ever Linux machine!
+Ran some of the most fundamental commands
+Had an introduction to navigating around the filesystem & how we can use commands like find and grep to make finding data even more efficient!
+ Power up your commands by learning about some of the important shell operators.
+
