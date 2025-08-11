@@ -1,0 +1,22 @@
+##Section 1
+
+Terminal Text Editors
+
+This task introduces us to nano and Vim in Linux
+
+Nano 
+To create a nano file in Linux, we just type 'nano filename' and it'll open the editor where you can modify the contents or text.
+Some of the nano features include
+
+Searching for text
+Copying and Pasting
+Jumping to a line number
+Finding out what line number you are on
+
+Vim
+Vim is a much more advanced editor.
+Some of Vim's benefits are
+Customisability - you can modify the keyboard shortcuts to be of your choosing
+Syntax Highlighting - this is useful if you are writing or maintaining code, making it a popular choice for software developers
+VIM works on all terminals where nano may not be installed
+Abundance of documentation 
