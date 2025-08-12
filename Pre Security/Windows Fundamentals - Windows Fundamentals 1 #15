@@ -1,1 +1,53 @@
+Machine IP :  MACHINE_IP
 
+User :  administrator
+
+Password :  letmein123!
+
+##Section 1
+
+Windows Editions
+
+This was a short intro to Windows editions and the progression of Windows as an OS from XP to Vista to 7 and now 11. And how it affected the masses corporations and 
+individuals When Microsoft announced the end of Windows XP
+
+##Section 2
+
+The Desktop (GUI)
+
+ Desktop – Main workspace for shortcuts, files, and folders. Right-click to adjust icon size, arrangement, or create new items. Change resolution, orientation, and wallpaper via Display settings and Personalize.
+
+Start Menu – Access to apps, files, settings, and power options.
+
+Left: User/account actions, settings, shutdown/restart.
+
+Middle: Recently added + installed apps (alphabetical).
+
+Right: Tiles for pinned apps (resizable, removable).
+
+Taskbar – Shows running and pinned apps. Hover for previews; right-click for options.
+
+Notification Area – Displays time, date, and system icons (e.g., network, volume). Customize in Taskbar settings.
+
+Tip – Right-click any item for more actions or info.
+
+##Section 3
+
+The File System.
+
+Current Standard – NTFS (New Technology File System) used in modern Windows; replaces FAT16/FAT32 & HPFS.
+
+Advantages over FAT:
+
+Supports files >4GB
+
+Permissions on files/folders
+
+Compression & encryption (EFS)
+
+Journaling for auto-repair after failures
+
+NTFS Permissions: Full control, Modify, Read & Execute, List folder contents, Read, Write.
+View via: Right-click → Properties → Security tab.
+
+Alternate Data Streams (ADS): Hidden extra data streams in files; can store metadata or hidden data (malware risk). Viewable in PowerShell.
