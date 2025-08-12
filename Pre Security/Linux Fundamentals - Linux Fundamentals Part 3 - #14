@@ -83,3 +83,29 @@ Processes can run in two states: In the background and in the foreground.
 Foregrounding a process
 
 The fg command is used to bring the background process back into the foreground on the terminal, where the script's output is now returned to us.
+
+##Section 4
+
+Maintaining Your System: Automation
+
+If  you want to schedule a command to run at boot or a specific time. We use the 'cron' feature in Linux.
+
+We interact with cron via crontab. Crontab is started during boot and is responsible for facilitating and running the cron commands.
+
+Essentially a crontab is a file with formatting recognised by cron to execute the process step by step
+
+There are 6 special crontab values.
+
+Value	Description
+MIN	 What minute to execute at
+HOUR	What hour to execute at
+DOM	What day of the month to execute at
+MON	What month of the year to execute at
+DOW	What day of the week to execute at
+CMD	The actual command that will be executed.
+
+Crontabs can be edited by using crontab -e, where you can select an editor (such as Nano) to edit your crontab.
+
+##Section 5
+
+
