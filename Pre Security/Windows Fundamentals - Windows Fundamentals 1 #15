@@ -50,4 +50,91 @@ Journaling for auto-repair after failures
 NTFS Permissions: Full control, Modify, Read & Execute, List folder contents, Read, Write.
 View via: Right-click → Properties → Security tab.
 
-Alternate Data Streams (ADS): Hidden extra data streams in files; can store metadata or hidden data (malware risk). Viewable in PowerShell.
+Alternate Data Streams (ADS): Hidden extra data streams in files; can store metadata or hidden data (malware risk) Viewable in PowerShell.
+
+##Section 4
+
+The Windows\System32 Folders
+
+The C:\Windows is traditionally where the Windows OS is found. Not necessarily the C drive but that is what's known as the location of the folder it can technically be at
+another folder.
+
+The system environment variable for windows is '%windir%'.
+
+Within the OS files, there are many files, but the most important one is the system32 file, which contains all the essential OS information. Deleting this file renders the 
+OS useless.
+
+##Section 5
+
+User Accounts, Profiles, and Permissions
+
+Windows Local User Accounts
+Windows local accounts are either:
+
+Administrator – Full system control: manage users, groups, settings, and install software.
+
+Standard User – Limited to personal files/folders; no system-level changes.
+
+Checking Accounts:
+
+Settings: Start → Search Other users → View/Add accounts (Admin only).
+
+Local User & Group Management (lusrmgr.msc): Lists Users and Groups. Groups define permissions; users inherit permissions from assigned groups.
+
+User Profiles:
+
+Created on first login; stored under C:\Users\<Username>.
+
+Common folders: Desktop, Documents, Downloads, Music, Pictures.
+
+Key Points:
+
+Admin can change account type and remove users.
+
+Standard Users don’t see admin-only options like Add someone else to this PC.
+
+##Section 6
+
+User Account Control
+
+User Account Control (UAC)
+Most home users run as local administrators, giving them full system control. While unnecessary for daily tasks (e.g., browsing, editing docs), elevated privileges increase the risk of malware infections, as malicious programs inherit the logged-in user’s permissions.
+
+UAC Overview
+Introduced in Windows Vista and continued in later versions.
+Prevents automatic use of full admin privileges in normal sessions.
+When an action requires elevated permissions, UAC prompts the user to approve or provide an admin password.
+Note: UAC (by default) does not apply to the built-in administrator account.
+
+How It Works:
+Admin accounts log in with standard privileges by default.
+Elevated actions trigger a UAC prompt (shield icon indicates this).
+User must confirm or enter admin credentials.
+If no password is entered, the action is cancelled.
+
+Security Benefit:
+Limits malware’s ability to make system-level changes by requiring explicit user approval for elevated actions.
+
+##Section 7
+
+Settings and the Control Panel
+
+Windows Settings vs Control Panel
+Primary locations to change system settings:
+Settings Menu – Introduced in Windows 8 for touch devices; now the main hub for most configuration changes in Windows 10+.
+Control Panel – Long-standing menu for advanced or legacy system settings.
+
+Key Points:
+Settings handles most common adjustments.
+Control Panel provides deeper, more complex configuration options.
+Some actions in Settings link back to Control Panel (e.g., Network & Internet → Change adapter options).
+Both are accessible from the Start Menu.
+If unsure which to open, search for the setting in the Start Menu; Windows will direct you to the correct location.
+
+##Section 8
+
+Task Manager
+
+The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, 
+such as how much CPU and RAM are being utilized, which falls under Performance. 
+
