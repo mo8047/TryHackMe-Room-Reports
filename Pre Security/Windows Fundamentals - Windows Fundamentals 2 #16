@@ -1,0 +1,144 @@
+##Section 1
+
+System Configuration (MSConfig)
+Purpose: Advanced troubleshooting utility for diagnosing startup issues. Requires local administrator rights to open.
+
+Launch:
+From Start Menu (or other methods like Run dialog: msconfig).
+
+Tabs Overview:
+1. General – Choose startup mode:
+    Normal – Load all devices and services.
+    Diagnostic – Basic drivers/services only.
+    Selective – Custom selection of items to load.
+2. Boot – Configure OS boot options.
+3. Services – View all system services (running or stopped).
+4. Startup – Redirects to Task Manager for managing startup programs.
+5. Tools – Quick access to various Windows utilities with descriptions; can launch directly or via command'
+
+##Section 2
+
+Change UAC settings.
+
+UAC via System Configuration Tools
+User Account Control (UAC) settings can be adjusted or disabled.
+Settings are changed by moving a slider, which updates:
+UAC notification behavior.
+Microsoft’s security recommendation for that level.
+
+##Section 3
+
+Computer Management (compmgmt)
+
+Sections:
+
+1. System Tools
+    Task Scheduler – Create/manage automated tasks (apps, scripts, etc.) to run on login, logoff, or a set schedule.
+    Event Viewer – View event logs (audit trail of system activity). Logs help diagnose issues and track actions.
+    Five event types; standard logs under Windows Logs.
+    Shared Folders – View/manage shared folders, connected user sessions, and open files.
+    Local Users and Groups – (lusrmgr.msc) Manage local accounts and group memberships.
+    Performance Monitor – (perfmon) Monitor system performance in real-time or from logs.
+    Device Manager – View/configure hardware; disable/enable devices.
+
+2. Storage:
+    Disk Management – Manage storage: add drives, extend/shrink partitions, assign/change drive letters.
+
+3. Services and Applications
+    Services – Manage background services (start/stop, change properties).
+    WMI Control – Configure Windows Management Instrumentation; manage systems locally/remotely via PowerShell (WMIC deprecated).
+
+##Section 4
+
+System Information (msinfo32)
+
+Purpose: Displays detailed hardware, system component, and software environment data for diagnostics.
+
+Main Sections:
+    System Summary – General system specs (CPU, model, etc.).
+    Hardware Resources – Low-level hardware data (advanced users).
+    Components – Device-specific details (e.g., Display, Input).
+    Software Environment – OS-bundled and installed software details, environment variables, network connections.
+
+Environment Variables:
+    Store OS and program-related info (e.g., WINDIR = Windows installation directory).
+
+View via:
+    msinfo32 → Software Environment → Environment Variables.
+    Control Panel → System and Security → System → Advanced system settings → Environment Variables.
+    Settings → System → About → System info → Advanced system settings → Environment Variables.
+
+Tip:
+    Use the search bar (bottom of msinfo32) to quickly locate information (e.g., select Components → search for IP address).
+
+##Section 5
+
+Resource Monitor (resmon)
+
+Purpose: Advanced monitoring tool showing per-process and total CPU, memory, disk, and network usage, plus details on file handles/modules.
+
+Key Features:
+    Monitor and filter activity for specific processes/services.
+    Start, stop, pause, or resume services.
+    Close unresponsive applications.
+    Identify deadlocks and file locking conflicts.
+
+Interface:
+    Overview tab with 4 sections: CPU, Disk, Network, Memory.
+    Each section has its own detailed tab.
+    Right-side pane shows real-time graphs for each resource.
+
+Target Users: Primarily advanced users performing in-depth troubleshooting.
+
+##Section 6
+
+Command Prompt (cmd)
+
+Overview:
+Legacy text-based interface for interacting with the OS; still useful for quick tasks and troubleshooting.
+Commands can be run standalone or with parameters to modify output.
+Most commands have help manuals to show syntax and options.
+
+Basic Commands:
+    hostname – Displays computer name.
+    whoami – Displays logged-in username.
+    cls – Clears the screen.
+
+Networking & System Info:
+
+ipconfig – Shows network address settings.
+    Help: ipconfig /?
+
+netstat – Displays protocol stats and current TCP/IP connections.
+    Can run with parameters: -a, -b, -e, etc.
+
+net – Manages network resources (requires sub-commands).
+    Help: net help
+    Examples: net help user, net help localgroup, net help share, net help session.
+
+Tip:
+/? works for most commands to show help; some (like net) use net help <subcommand>.
+
+##Section 6
+
+Windows Registry (regedit)
+
+Definition:
+    Central hierarchical database storing system, user, application, and hardware configuration data.
+Continuously referenced by Windows during operation.
+
+Stores Information Such As:
+    User profiles.
+    Installed applications and associated file types.
+    Folder and icon settings.
+    Hardware details.
+    Active ports.
+
+Important:
+    Intended for advanced users.
+    Incorrect changes can break system functionality.
+
+Access:
+    View/edit via Registry Editor (regedit).
+
+
