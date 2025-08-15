@@ -2,4 +2,4 @@
 
 This repo documents my progress through TryHackMe rooms, covering key takeaways, lessons learned, and their real-world applications.
 
-[THM-LGQ4TQULNX.pdf](https://github.com/user-attachments/files/21796373/THM-LGQ4TQULNX.pdf)
+![Alt text](https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-LGQ4TQULNX.pdf)
