@@ -1,1 +1,151 @@
+##Section 1 
+
+Windows Updates.
+
+Purpose:
+    Microsoft service delivering security updates, feature enhancements, and patches for Windows and other Microsoft products (e.g., Microsoft Defender).
+
+Release Schedule:
+    Patch Tuesday – 2nd Tuesday of each month.
+    Urgent updates may be released immediately outside this schedule.
+
+Access:
+    Settings → Windows Update.
+
+Run dialog / CMD:
+    control /name Microsoft.WindowsUpdate
+
+
+Notes:
+    Some systems may have Windows Update settings managed.
+Updates may require a restart; in Windows 10+, they can be set to a later date but not skipped.
+
+Security Importance:
+    Updates protect against vulnerabilities Microsoft enforces installation to maintain system security.
+
+##Section 2
+
+Windows Security.
+
+Purpose: 
+    Central hub for managing Windows’ built-in protection tools for device and data security.
+
+Access:
+    Settings → Windows Security.
+
+Protection Areas:
+    Virus & threat protection: Antivirus and malware protection.
+    Firewall & network protection: Monitors and controls network access.
+    App & browser control: Manages app execution and browser-based threats.
+    Device security: Hardware-based security features.
+
+Status Icons:
+    Green: Fully protected, no actions needed.
+    Yellow: Recommendations to review.
+    Red: Immediate attention required.
+
+##Section 3
+
+Virus & Threat Protection.
+
+1. Current threats
+
+  Scan options:
+    Quick scan: Common threat locations.
+    Full scan: All files/programs (1hr+).
+    Custom scan: Specific files/folders.
+
+  Threat history:
+    Last scan: Auto scans by Defender.
+    Quarantined threats: Isolated, blocked.
+    Allowed threats: Manually permitted (use only if 100% sure).
+
+  2. Virus & threat protection settings
+    Real-time protection: Blocks active malware.
+    Cloud-delivered protection: Latest threat data from cloud.
+    Automatic sample submission: Sends suspect files to Microsoft.
+    Controlled folder access: Stops unauthorized file changes.
+    Exclusions: Skips scanning specified items (risky).
+    Notifications: Alerts about security status.
+
+  3. Updates
+    Check for updates Manually update definitions.
+
+  4. Ransomware protection
+    Requires Controlled folder access + Real-time protection.
+
+Tip: Right-click any file/folder → Scan with Microsoft Defender for an on-demand check.
+
+##Section 4
+
+Firewall & Network Protection.
+
+Function: Controls what data is allowed in/out through device ports (like a security guard checking IDs).
+
+Profiles:
+    Domain: Used when connected to an authenticated corporate domain.
+    Private: For trusted home/private networks.
+    Public: Default for untrusted networks (cafes, airports).
+
+Profile Options:
+    Turn firewall on/off.
+    Block all incoming connections (stricter).
+
+Key Points:
+    Keep Windows Defender Firewall enabled unless you fully understand the risks.
+    You can allow specific apps through (Private/Public).
+Advanced settings (WF.msc) are for experienced users—follow Microsoft best practices.
+
+##Section 5 
+
+App & Browser Control
+
+Microsoft Defender SmartScreen:
+    Blocks phishing/malware sites.
+    Warns before running suspicious apps/files.
+    Checks downloads for potential threats.
+
+Check Apps and Files: Scans unrecognized items from the web before they run.
+
+Exploit Protection:
+    Built-in defense against common attack methods.
+
+Best Practice:
+    Leave defaults ON unless you know exactly what you’re changing—tweaks here can weaken protection.
+
+##Section 6
+
+Device Security
+
+Core Isolation / Memory Integrity
+    Blocks malicious code from getting into critical system processes.
+    Keep it ON unless you have a real reason to disable.
+
+Security Processor (TPM)
+    A hardware chip that stores encryption keys and handles cryptographic tasks securely.
+    Helps with features such as BitLocker, Windows Hello, and Secure Boot.
+    Tamper-resistant—malware can’t mess with it.
+
+Rule: These are low-level protections. If you turn them off without knowing exactly why, you’re asking for trouble.
+
+##Section 7
+
+BitLocker
+
+BitLocker = full-disk encryption.
+Purpose: Protects your data if your PC is lost, stolen, or disposed of.
+Best setup: Use with a TPM 1.2+ chip for stronger security and tamper detection.
+Function: Encrypts the entire drive so data is unreadable without proper authentication.
+Bottom line: Without the key or TPM authorization, your data is useless to anyone else.
+
+##Section 8
+
+Volume Shadow Copy Service.
+
+VSS = Windows’ built-in snapshot system.
+Purpose: Creates point-in-time copies of files/drives for backup and restore.
+Storage: Saved in the hidden System Volume Information folder.
+Uses: Restore points, system restore, quick recovery from mistakes or bad updates.
+Security risk: Ransomware often deletes these snapshots to block recovery so offline/off-site backups are essential.
+Key takeaway: VSS is great for convenience restores, but never your only backup plan
 
