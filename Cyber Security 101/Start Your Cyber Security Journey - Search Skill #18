@@ -21,3 +21,66 @@ agree on the central claims.
 
 Search Engines.
 
+Almost every search engine allows the user for advanced search.
+
+Advanced search commands in Google include.
+"exact phrase": Double quotes indicate that you are looking for pages with the exact word or phrase. For example, one might search for "passive reconnaissance" to get pages with this exact phrase.
+
+site:: This operator lets you specify the domain name to which you want to limit your search. For example, we can search for success stories on TryHackMe using site:tryhackme.com success stories.
+
+-: The minus sign allows you to omit search results that contain a particular word or phrase. For example, you might be interested in learning about the pyramids, but you don’t want to view 
+tourism websites; one approach is to search for pyramids -tourism or -tourism pyramids.
+
+filetype:: This search operator is indispensable for finding files instead of web pages. Some of the file types you can search for using Google are Portable Document Format (PDF), Microsoft
+Word Document (DOC), Microsoft Excel Spreadsheet (XLS), and Microsoft PowerPoint Presentation (PPT). For example, to find cybersecurity presentations, try searching for filetype:ppt 
+cyber security.
+
+##Section 3
+
+Specialized Search Engine.
+
+There are specialized search engines that find specific type of results.
+
+Shodan
+a search engine for devices connected to the Internet. It allows you to search for specific types and versions of servers, networking equipment, industrial control systems, and IoT devices.
+
+Censys
+focuses on Internet-connected hosts, websites, certificates, and other Internet assets.
+
+VirusTotal
+an online website that provides a virus-scanning service for files using multiple antivirus engines. 
+
+Have I Been Pwned
+Have I Been Pwned does one thing; it tells you if an email address has appeared in a leaked data breach. 
+
+##Section 4
+
+Vulnerabilities and Exploits
+
+CVE
+We can think of the Common Vulnerabilities and Exposures (CVE) program as a dictionary of vulnerabilities. It provides a standardized identifier for vulnerabilities and security issues 
+in software and hardware products. Each vulnerability is assigned a CVE ID with a standardized format like CVE-2024-29988. This unique identifier (CVE ID) ensures that everyone from 
+security researchers to vendors and IT professionals is referring to the same vulnerability.
+
+Exploit Database
+The Exploit Database lists exploit codes from various authors; some of these exploit codes are tested and marked as verified.
+
+GitHub
+a web-based platform for software development can contain many tools related to CVEs, along with proof-of-concept and exploit codes. 
+
+##Section 5
+
+Technical Documentation
+
+Linux (man pages): Use man <command> to access built-in manuals for commands, system calls, libraries, and config files (e.g., man ip). Quit with q.
+Windows: Microsoft provides official technical docs (e.g., searching ipconfig on the MS Docs site).
+Product Documentation: Popular tools (Snort, Apache, PHP, Node.js, etc.) maintain official docs as the most reliable, up-to-date source.
+Key Skill: Always check official documentation first—it’s complete, authoritative, and current.
+
+##Section 6
+
+Social Media
+
+Social media is useful for learning about people, companies, and new cybersecurity trends. Use a temporary email to explore safely, and don’t share personal info that could be used by 
+attackers. Follow trusted pages and news sites to stay updated.
+
