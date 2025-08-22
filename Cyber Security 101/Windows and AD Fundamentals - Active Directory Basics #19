@@ -1,0 +1,16 @@
+##Section 1
+
+Windows Domains
+
+When a business has only a few computers, you can manage them one by one. But as the company grows, this becomes impossible. A Windows Domain solves this by letting all users and computers be managed 
+in one place using Active Directory (AD) with the Domain Controller (DC) handling authentication and policies. This setup makes it easier to control accounts, apply security rules, and manage 
+resources across the whole network like how schools and workplaces let you log in on any computer with the same account.
+
+##Section 2
+
+Active Directory
+
+Active Directory Domain Services (AD DS) is the core of a Windows Domain, storing information about objects like users, machines, and groups. Users can represent people or services and are 
+authenticated by the domain. Machines also get accounts (e.g., PC01$) and manage themselves within the network. Security groups make it easier to assign permissions to multiple users or computers 
+at once, with built-in groups like Domain Admins, Server Operators, and Backup Operators. These objects are organized into Organizational Units (OUs), which mirror departments (e.g., IT, Sales) 
+to apply policies, while groups are used for permissions. In short: OUs = policies, Groups = access.
