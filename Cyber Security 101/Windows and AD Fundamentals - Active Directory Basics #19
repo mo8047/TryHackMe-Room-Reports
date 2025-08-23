@@ -10,7 +10,14 @@ resources across the whole network like how schools and workplaces let you log i
 
 Active Directory
 
-Active Directory Domain Services (AD DS) is the core of a Windows Domain, storing information about objects like users, machines, and groups. Users can represent people or services and are 
-authenticated by the domain. Machines also get accounts (e.g., PC01$) and manage themselves within the network. Security groups make it easier to assign permissions to multiple users or computers 
-at once, with built-in groups like Domain Admins, Server Operators, and Backup Operators. These objects are organized into Organizational Units (OUs), which mirror departments (e.g., IT, Sales) 
-to apply policies, while groups are used for permissions. In short: OUs = policies, Groups = access.
+Active Directory Domain Services (AD DS) is the core of a Windows Domain.
+Storing information about objects like users, machines, and groups. 
+Users can represent people or services and are authenticated by the domain. Machines also get accounts (e.g., PC01$) and manage themselves within the network. 
+Security groups make it easier to assign permissions to multiple users or computers at once, with built-in groups like Domain Admins, Server Operators, and Backup Operators. 
+These objects are organized into Organizational Units (OUs), which mirror departments (e.g., IT, Sales) to apply policies, while groups are used for permissions. In short: OUs = policies, 
+Groups = access.
+
+##Section 3
+
+Mnanging Users in AD
+
