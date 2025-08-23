@@ -19,5 +19,188 @@ Groups = access.
 
 ##Section 3
 
-Mnanging Users in AD
+Managing Users in AD
 
+Deleting Extra OUs and Users
+An extra department OU exists that isn’t in the org chart → it must be removed.
+OUs are protected against accidental deletion by default.
+
+To delete:
+Enable Advanced Features in the View menu.
+Right-click OU → Properties → Object tab → uncheck Protect from accidental deletion.
+Delete OU (removes all users/groups inside).
+Update users to match the organisational chart (create/delete as needed).
+
+Delegation:
+Delegation lets specific users manage OUs without being Domain Admins.
+Common use: allow IT support to reset passwords for low-privilege users.
+Phillip (IT support) should reset passwords for Sales, Marketing, and Management OUs.
+Example: delegate Sales OU → right-click Sales → Delegate Control → add phillip → grant “Reset user passwords.”
+
+##Section 4
+
+Managing Computer in AD
+
+Default Behaviour
+By default, all machines that join the domain (except Domain Controllers) are placed in the Computers container.
+This includes servers, laptops, and PCs for network users.
+Keeping all devices in one container is not ideal because different policies are needed for servers vs. user machines.
+
+Device Categories
+
+Workstations
+Used by domain users for daily work and browsing.
+Should never have privileged accounts logged in.
+
+Servers
+Provide services to users or other servers.
+
+Domain Controllers
+Manage the AD domain.
+Most sensitive devices since they hold all user account password hashes.
+
+Reorganisation Steps
+Create two new OUs under thm.local:
+Workstations
+Servers
+
+Move:
+PCs and laptops → Workstations OU
+Servers → Servers OU
+Domain Controllers remain in their default Windows OU.
+
+##Section 5
+
+Group Policies
+
+Purpose
+Organising OUs allows applying different policies per department or device type.
+GPOs are collections of settings linked to OUs that apply to users or computers.
+
+GPO Basics
+
+Managed via Group Policy Management Tool.
+
+GPOs can be linked to an OU, domain, or sub-OUs.
+Security filtering lets you apply GPOs only to specific users/computers.
+Policies are distributed via the SYSVOL share on Domain Controllers.
+GPO updates normally take ~2 hours; can be forced with:
+
+gpupdate /force
+Example – Default Domain Policy
+Applies to the entire domain.
+Contains password/account lockout policies.
+
+Edited via:
+Computer Configurations → Policies → Windows Settings → Security Settings → Account Policies
+
+New GPOs for THM Inc.
+1. Restrict Control Panel Access
+Goal: Only IT can access Control Panel; others are blocked.
+GPO: Restrict Control Panel Access
+
+Policy Path:
+User Configurations → Administrative Templates → Control Panel → Prohibit Access to Control Panel and PC settings
+Linked To: Marketing, Management, Sales OUs.
+Result: Users in these OUs get an "Access Denied" message. IT still has access.
+
+2. Auto Lock Screen (5 mins inactivity)
+Goal: Lock all computers after 5 mins of inactivity.
+GPO: Auto Lock Screen
+
+Policy Path:
+Computer Configurations → Policies → Windows Settings → Security Settings → Local Policies → Security Options
+Linked To: Root domain (thm.local) → inherited by Workstations, Servers, Domain Controllers OUs.
+Result: All computers lock automatically after 5 mins.
+
+##Section 6
+
+Authentication Methods
+
+In Windows domains, credentials are stored in the Domain Controllers (DCs).
+Whenever a user authenticates, the DC verifies their credentials.
+Two protocols are used:
+Kerberos → Default, modern, ticket-based.
+NetNTLM → Legacy, challenge-response, kept for compatibility.
+Kerberos Authentication (Default)
+Works with tickets as proof of authentication.
+
+Main steps:
+User sends username + timestamp (encrypted with password-derived key) → KDC.
+KDC replies with:
+
+TGT (Ticket Granting Ticket) → used to request service tickets.
+
+Session Key → allows secure future requests.
+To access a service, user requests a TGS (Ticket Granting Service) by sending their TGT + SPN (service identifier).
+KDC sends back:
+TGS (encrypted with the service account’s hash).
+Service Session Key.
+User presents the TGS to the service.
+Service decrypts it with its own account hash → validates the session.
+
+✅ Benefit: User credentials aren’t repeatedly sent; tickets handle re-authentication.
+
+NetNTLM Authentication (Legacy)
+
+Uses a challenge-response mechanism.
+Main steps:
+
+Client requests authentication from the server.
+Server generates a random challenge and sends it.
+Client creates a response using their NTLM password hash + challenge.
+Server forwards challenge + response → Domain Controller.
+DC recalculates expected response and compares:
+If matches → authentication succeeds.
+If not → access denied.
+Server passes result to the client.
+
+✅ Password/hash is never directly transmitted over the network.
+⚠️ Still outdated and less secure than Kerberos.
+
+##Section 7
+
+Trees, Forests and Trusts
+
+
+Single Domain
+
+Good enough for small companies.
+One DC manages all users, computers, and policies.
+Becomes harder to manage as the company grows.
+
+Trees
+ Used when you need multiple domains under the same namespace.
+   Example:
+   Root: thm.local
+   Subdomains: uk.thm.local, us.thm.local.
+ Each subdomain has its own DC, users, and policies.
+
+ Benefits:
+   Independent management for each branch.
+   Policies applied separately per domain.
+
+ Admins:
+  Domain Admins → control only their domain.
+  Enterprise Admins → control all domains in the enterprise.
+
+ Forests:
+  Used when you have different namespaces.
+   Example:
+   Company A → thm.local tree.
+   Company B → mht.local tree.
+   Together they form a forest.
+ Allows multiple trees (with different roots) to coexist in one environment.
+
+Trust Relationships:
+   Let users from one domain access resources in another.
+
+ One-way trust
+   If Domain A trusts Domain B → users from B can access A (but not the other way around).
+
+ Two-way trust:
+   Both domains can authorise users from the other.
+
+Default when joining domains in a tree/forest.
+
+Note: Trusts only enable the possibility of cross-access; actual permissions still need to be granted manually.
