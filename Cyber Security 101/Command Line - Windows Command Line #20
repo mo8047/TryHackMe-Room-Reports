@@ -1,0 +1,60 @@
+##Section 1
+
+Basic System Information
+
+PATH: Windows only executes commands in directories listed in the system Path. Run set to view it.
+ver: Shows OS version.
+systeminfo: Displays detailed system information (OS, host, processor, memory, etc.).
+driverquery: Lists installed drivers. Add | more to scroll page by page.
+help [command]: Displays help for a command.
+cls: Clears the terminal screen.
+
+Tip: Use | more for long outputs and CTRL + C to exit paging.
+
+##Section 2
+
+Network Troubleshooting
+
+ipconfig → Shows IP, subnet mask, and gateway. Add /all for full details (DNS, DHCP, MAC, etc.).
+ping target → Tests connectivity by sending ICMP requests.
+tracert target → Traces the route (hops) to a target server.
+nslookup domain [server] → Resolves domain to IP (optionally specify DNS server).
+netstat → Displays network connections and listening ports.
+  -a → All connections & ports
+  -b → Show program using each port
+  -o → Show process ID (PID)
+  -n → Show numeric addresses/ports
+
+Example: netstat -abon → Full details with executables + PID
+
+Tip: Use netstat -h to explore more options.
+
+##Section 3
+
+File and Disk Management
+
+Directories
+  cd → Show current directory or move into one.
+  cd .. → Go up one level.
+  dir → List contents (/a for hidden, /s for all subdirs).
+  tree → Show folder structure visually.
+  mkdir → Create a directory.
+  rmdir → Delete a directory.
+Files
+  type file.txt → View file contents.
+  more file.txt → View long files page by page.
+  copy file1 file2 → Copy files.
+  move file target → Move/rename files.
+  del / erase file → Delete files.
+  Wildcards (*) can target multiple files.
+In conclusion the CLI is faster more efficient than the GUI
+
+##Section 4
+
+Task and Process Management
+
+Instead of Task Manager, you can use the command line to view and kill processes. tasklist shows all running processes, and you can filter results (e.g., tasklist /FI "imagename eq sshd.exe"). 
+Once you know the process ID (PID), you can end it with taskkill /PID <pid>. (FI = Filter Image, eq = equal, PID = Process ID)
+
+The CLI provides more  control over Task Manager, especially when filtering and terminating processes directly by PID.
+
