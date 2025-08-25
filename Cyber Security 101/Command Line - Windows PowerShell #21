@@ -1,0 +1,18 @@
+##Section 1
+
+What is PowerShell
+
+PowerShell is Microsoft’s cross-platform automation tool that combines a command-line shell, scripting language, and configuration management framework. Built on .NET, it’s object-oriented, 
+which makes it far more powerful than traditional text-based shells like cmd.exe. Instead of plain text, commands (cmdlets) return objects with properties and methods, making data manipulation 
+and system management much easier.
+
+Why It’s Powerful
+  Objects, not text → richer data handling.
+  Integration with Windows APIs → deeper system control.
+  Cross-platform support → works on Windows, macOS, and Linux.
+  PowerShell enables advanced automation, from simple file management to enterprise-level configuration
+
+##Section 2
+
+PowerShell Basics
+
