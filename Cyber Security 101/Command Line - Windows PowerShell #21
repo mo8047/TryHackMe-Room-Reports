@@ -7,12 +7,63 @@ which makes it far more powerful than traditional text-based shells like cmd.exe
 and system management much easier.
 
 Why It’s Powerful
-  Objects, not text → richer data handling.
-  Integration with Windows APIs → deeper system control.
-  Cross-platform support → works on Windows, macOS, and Linux.
+  Objects, not text -> richer data handling.
+  Integration with Windows APIs -> deeper system control.
+  Cross-platform support -> works on Windows, macOS, and Linux.
   PowerShell enables advanced automation, from simple file management to enterprise-level configuration
 
 ##Section 2
 
 PowerShell Basics
 
+Basic Syntax: Verb-Noun
+PowerShell commands are cmdlets, which follow a Verb-Noun format:
+Get-Content -> read file contents
+Set-Location -> change directory
+
+Key Cmdlets to Know
+  Get-Command -> list all available cmdlets, functions, aliases, and scripts
+    Get-Help -> get detailed help, examples, and usage for cmdlets
+    Get-Alias -> list aliases (e.g., dir = Get-ChildItem, cd = Set-Location)
+
+Extending PowerShell
+  Extra functionality can be added by installing modules from repositories like PowerShell Gallery:
+    Find-Module -Name "PowerShell*" -> search for modules
+    Install-Module -Name <ModuleName> -> install new cmdlets
+
+##Section 3
+
+Navigating the File System and Working with Files
+
+PowerShell provides cmdlets for working with files and directories, similar to traditional CLI tools but more unified and powerful.
+
+List items -> Get-ChildItem (like dir / ls)
+Change directory -> Set-Location (like cd)
+Create items -> New-Item (works for both files & directories)
+Remove items -> Remove-Item (replaces del and rmdir)
+Copy & Move items -> Copy-Item / Move-Item (like copy / move)
+Read file contents -> Get-Content (like type / cat)
+
+Lesson Learned
+PowerShell unifies file and folder management under a single set of cmdlets, making it more consistent and versatile than the old Windows CLI.
+
+##Section 4
+
+
+Piping, Filtering, and Sorting Data
+
+In PowerShell, piping (|) is more powerful than in traditional CLI because it passes objects (with properties & methods), not just text. This allows advanced sorting, filtering, 
+and manipulation of data.
+
+Key Cmdlets
+Sort-Object -> Sorts objects by a property (e.g., file size).
+Where-Object -> Filters objects based on conditions. Supports operators like:
+  -eq (equal), -ne (not equal)
+  -gt / -ge (greater than, greater or equal)
+  -lt / -le (less than, less or equal)
+  -like (pattern match)
+Select-Object -> Chooses specific properties or limits results.
+Select-String -> Searches inside files (like grep / findstr), supports regex.
+
+Lesson Learned
+PowerShell pipelines enable chaining multiple cmdlets to transform, filter, and analyze data efficiently—far beyond what plain text piping allows.
