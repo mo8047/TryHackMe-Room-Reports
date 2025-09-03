@@ -49,7 +49,6 @@ PowerShell unifies file and folder management under a single set of cmdlets, mak
 
 ##Section 4
 
-
 Piping, Filtering, and Sorting Data
 
 In PowerShell, piping (|) is more powerful than in traditional CLI because it passes objects (with properties & methods), not just text. This allows advanced sorting, filtering, 
@@ -67,3 +66,121 @@ Select-String -> Searches inside files (like grep / findstr), supports regex.
 
 Lesson Learned
 PowerShell pipelines enable chaining multiple cmdlets to transform, filter, and analyze data efficiently—far beyond what plain text piping allows.
+
+##Section 5
+
+System and Network Information
+
+PowerShell provides cmdlets that go beyond traditional CLI commands to retrieve detailed system and network information.
+
+System Information
+
+Get-ComputerInfo retrieves a comprehensive snapshot of the system configuration, including OS, hardware, BIOS, build numbers, and more.
+
+Traditional counterpart: systeminfo (more limited).
+Get-LocalUser -> Lists all local user accounts, including account status and description.
+Example output:
+
+Name               Enabled Description
+----               ------- -----------
+Administrator      True    Built-in admin account
+captain            True    Beloved captain of this pirate ship
+Guest              False   Guest account
+
+Network Information
+Get-NetIPConfiguration -> Shows network interface details: IP addresses, gateways, DNS servers, etc.
+Example output:
+
+InterfaceAlias       : Ethernet
+IPv4Address          : 10.10.178.209
+IPv4DefaultGateway   : 10.10.0.1
+DNSServer            : 10.0.0.2
+
+
+Get-NetIPAddress -> Lists all IP addresses on the system, active or inactive, with details like address family, type, and lifetime.
+
+Key Takeaways
+PowerShell cmdlets return objects making it easy to manipulate, filter, and analyze system and network data.
+These tools allow IT professionals to manage and monitor local and remote machines efficiently from the command line.
+
+##Section 6
+
+Real-Time System Analysis
+
+Processes
+
+Get-Process -> Lists all currently running processes along with details like CPU usage, memory consumption, process ID (PID), and handles.
+
+Useful for monitoring performance or identifying suspicious processes.
+Example:
+
+Handles  NPM(K)  PM(K)   WS(K)  CPU(s)  Id    ProcessName
+-------  ------  -----   -----  ------  --    -----------
+67       5       872     500    0.06    2340  AggregatorHost
+309      13      18312   1256   0.52    1524  amazon-ssm-agent
+
+Services
+
+Get-Service -> Retrieves information about Windows services, showing whether they are running, stopped, or paused.
+
+Essential for troubleshooting or spotting unusual services.
+Example:
+
+Status   Name             DisplayName
+------   ----             -----------
+Running  AmazonSSMAgent   Amazon SSM Agent
+Stopped  AppIDSvc         Application Identity
+
+Network Connections
+
+Get-NetTCPConnection -> Displays active TCP connections, including local/remote addresses and ports, state, and owning process.
+
+Crucial for network monitoring, malware analysis, or incident response.
+Example:
+
+LocalAddress    LocalPort RemoteAddress    RemotePort State       OwningProcess
+------------    --------- -------------    ---------- -----       -------------
+10.10.178.209   22        10.14.87.60      53523      Established 1444
+0.0.0.0         3389      0.0.0.0          0          Listen      980
+
+File Integrity
+
+Get-FileHash -> Computes cryptographic hashes (e.g., SHA256) of files to verify integrity or detect tampering.
+
+Valuable in forensic analysis, malware investigation, and verifying file authenticity.
+Example:
+
+Algorithm  Hash                          Path
+---------  ----                          ----
+SHA256     54D2EC3C12BF3D...           C:\Users\captain\Documents\captain-cabin\ship-flag.txt
+
+Key Points
+PowerShell cmdlets return rich objects, enabling filtering, sorting, and further analysis directly in the pipeline.
+Combining these cmdlets with piping (|) and filtering (Where-Object, Select-Object) creates a powerful toolset for monitoring, troubleshooting, and forensic investigations.
+
+##Section 7
+
+Scripting
+
+PowerShell Scripting
+Definition: A script is a text file with commands executed automatically—think a computer to-do list.
+Purpose: Automates tasks, reduces errors, handles complex or repetitive operations.
+
+Use Cases:
+Blue Team: Automate log analysis, IOC extraction, malware analysis, system monitoring.
+Red Team: Remote command execution, system enumeration, obfuscated scripts for testing defenses.
+Sysadmins: Manage configs, enforce policies, respond to incidents at scale.
+
+Invoke-Command
+Purpose: Run commands or scripts on local or remote machines.
+
+Examples:
+# Run a script remotely
+Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
+
+# Run a command remotely
+Invoke-Command -ComputerName Server01 -Credential Domain01\User01 -ScriptBlock { Get-Culture }
+
+
+ScriptBlock { … } executes commands remotely as if typed on that system.
+Supports large-scale automation and remote management without full scripting knowledge.
