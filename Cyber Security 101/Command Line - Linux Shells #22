@@ -1,0 +1,41 @@
+##Section 1
+
+How To Interact With a Shell?
+
+When you open a Linux shell you usually land in your home directory. Use 'pwd' to check your current directory, 'cd' to move between directories, and 'ls' to list contents. 
+To view a file, use 'cat filename.txt'. For searching inside files, 'grep' is a powerful tool; it finds patterns or keywords and displays matching lines (e.g., grep THM dictionary.txt).
+
+##Section 2
+
+Types of Linux Shells
+Linux has multiple shells (like Windows has Command Prompt and PowerShell). You can check your current shell with echo $SHELL and see all installed shells in '/etc/shells'. To switch, 
+Just type the shell name (e.g., zsh), or permanently change it with 'chsh -s /path/to/shell'.
+
+Popular shells:
+Bash: Default on most distros, supports scripting, tab completion, command history.
+Fish: Beginner-friendly, syntax highlighting, auto spell correction, customizable prompts.
+Zsh: Powerful, plugin-based, highly customizable, advanced tab completion.
+
+Summary:
+Bash = standard, scripting-friendly.
+Fish = easiest to use, colorful, but limited scripting.
+Zsh = advanced, customizable, plugin-rich.
+
+##Section 3
+
+Shell Scripting and Components
+
+A shell script is a set of commands bundled into a file (.sh) to automate repetitive tasks. Scripts start with a shebang (#!/bin/bash) to define the interpreter. You can use:
+  Variables to store and reuse values (read name; echo "Welcome, $name").
+  Loops to repeat tasks (for i in {1..10}; do echo $i; done).
+  Conditionals to control flow (if [ "$name" = "Stewart" ]; then ... fi).
+  Comments (#) to explain code without affecting execution.
+Before running, give execute permission (chmod +x script.sh) and run with ./script.sh.
+
+##Section 4
+
+Practical Excercise
+
+In this section, we had to complete an exercise by modifying a given file in the VM through 'nano' and modify it so the script can navigate the desktop and find the 
+files in the prewritten command through the 'grep' function.
+
