@@ -42,9 +42,56 @@ failures. Examples: NFS (Network file system), RPC (Remote procedure call).
 
 6. Presentation Layer
 
-Formats data so the application layer can understand it. Handles encoding, compression, and encryption. Examples: character encoding (ASCII, Unicode), image formats (JPEG, PNG) 
-and MIME for email attachments.
+Formats data so the application layer can understand it. Handles encoding, compression, and encryption. Examples: character encoding (ASCII, Unicode), image formats (JPEG, PNG) and MIME for email attachments.
 
 7. Application Layer
 
 Provides network services to end-user applications. Examples include HTTP, FTP, DNS, SMTP, POP3, IMAP. Your browser, email client, or other apps interact with this layer directly.
+
+
+##Section 2
+
+TCP/IP Model
+
+The TCP/IP (Transmission Control Protocol/Internet Protocol) was created by the DoD in the 1970s to prevent complete system failure in case of an attack. 
+The TCP/IP model is divided to 4 sections. 1. Link Layer, 2. Internet Layer, 3. Transport layer, and 4. Application Layer.
+Modern cirriculum includes Physical as a 5th layer.
+
+##Section 3
+
+IP addresses and subnets
+
+An IP address is a unique identifier for other hosts to communicate with. There are 2 version of IP. IPv4 & IPv6, IPv4 the most common version comprises of 4 octets (8 bits) e.g. 192.168.1.1.
+In the IP addresses the numbers 0 and 255 are reserved for Network addresses (0) and broadcast addresses (255) respectively. There are approximately 4 billion IP addresses 2^32 in the IPv4 format 
+hence the creation of IPv6. To look up network configuration on windows head to your control panel and write "ipconfig" and you'll get all your IP information.
+Finally, routers work like post offices, forwarding packets toward their destination across networks. They operate at layer 3 (network layer), using IP addresses to decide the best path.
+
+##Section 4
+
+UDP/TCP
+
+The IP protocol identifies hosts on a network, but transport protocols handle communication between processes. 
+UDP is a fast, connectionless protocol that uses port numbers to reach specific processes but offers no delivery guarantee, like regular mail without confirmation. 
+TCP, on the other hand, is connection-oriented and ensures reliable delivery through acknowledgments(ACK), sequencing(SYN), and a three-way handshake(1. Client "SYN", Server "SYN-ACK", Client "ACK"). 
+Both use port numbers ranging from 1 to 65535 to identify processes.
+
+##Section 5
+
+Encapsulation
+
+Encapsulation is the process where each OSI layer adds its own header to the data before passing it to the next layer. 
+For example:
+  Application creates the data (e.g., an email).
+  Transport adds TCP/UDP headers → segment/datagram.
+  Network adds IP headers → packet.
+  Data link adds headers/trailers → frame.
+
+On the receiving end, the process is reversed until the original data is delivered.
+
+##Section6 
+
+Telnet
+
+I used telnet to interact with different services running on a target VM — the echo server (port 7), daytime server (port 13), and an HTTP server (port 80). 
+The exercise showed how telnet can connect directly to TCP ports, send commands, and read responses. From this, you identified the web server as lighttpd/1.4.63 and captured the flag 
+THM{TELENT_MASTER}.
