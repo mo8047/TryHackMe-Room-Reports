@@ -1,0 +1,65 @@
+##Section 1
+
+DHCP: Give Me My Network Settings
+
+This room explained how devices automatically get network configurations using DHCP(Dynamic Host Configuration Protocol). When your laptop connects to a WiFi network, DHCP assigns an IP address,
+subnet mask, gateway, and DNS server without manual input. The process follows the 'DORA' steps: Discover, Offer, Request, and Acknowledge. A packet capture example showed a client receiving an 
+IP (192.168.66.133) through this exchange.
+
+##Section 2
+
+ARP: Bridging Layer 3 Addressing to Layer 2 Addressing
+
+It explained how devices on the same Ethernet or WiFi network need to know each other’s MAC addresses to send data link frames, even though communication is usually based on IP addresses. 
+The Address Resolution Protocol (ARP) is used to map an IP address to a MAC address. A host broadcasts an ARP Request, and the target replies with its MAC address. This allows the two hosts 
+to exchange frames. ARP operates at layer 2 but supports layer 3 functions by linking IP addresses to MAC addresses.
+
+##Section 3
+
+ICMP: Troubleshooting Networks
+
+This room covered ICMP(Internet Control Message Protocol) which is used for network diagnostics and error reporting. Two key tools were explained:
+
+  Ping: Sends ICMP Echo Requests to check if a target host is reachable and measures round-trip time (RTT). The host responds with ICMP Echo Replies.
+  Traceroute (tracert on Windows): Discovers the path packets take to reach a target by leveraging the TTL (Time-to-Live) field. When TTL reaches zero, routers send back ICMP 
+  Time Exceeded messages, revealing the route.
+
+These tools help verify connectivity, measure latency, and map the route through the network.
+
+##Section 4
+
+Routing
+
+This section introduces routing, the process routers use to decide how to deliver packets between networks.
+Routers need algorithms to figure out which path to use, especially when multiple paths exist between the source and destination.
+Several routing protocols were briefly described:
+
+  OSPF(Open Shortest Path First): Shares network topology and calculates shortest paths.
+  EIGRP(Enhanced Interior Gateway Routing Protocol): Cisco proprietary, considers route cost (bandwidth, delay) to choose efficient paths.
+  BGP(Border Gateway Protocol): Internet backbone protocol, connects different networks/ISPs for global routing.
+  RIP(Routing Information Protocol): A Simple, hop-count-based protocol for small networks.
+
+In conclusion, routers rely on routing protocols to dynamically decide the best path for packets across networks.
+
+##Section 5
+
+
+NAT
+
+This section explains Network Address Translation (NAT) as a solution to IPv4 address exhaustion:
+
+  Problem: IPv4 only supports ~4 billion addresses, which is insufficient given the explosion of internet-connected devices.
+  Solution: NAT allows multiple private IP addresses to share a single public IP address for Internet access.
+  How it works:
+
+    Internal devices use private IPs; external communication uses the router’s public IP.
+    The NAT router maintains a translation table mapping internal IP/port pairs to external IP/port pairs.
+    This allows multiple devices to communicate with the Internet using one public IP while keeping connections distinguishable.
+
+Essentially, NAT extends IPv4 usability without requiring more public addresses.
+
+##Section 6
+
+Conclusion
+
+In this final section, we finished a questionnaire asking general networking MCQs and asking which networking protocol is used to solve the issue at hand.
