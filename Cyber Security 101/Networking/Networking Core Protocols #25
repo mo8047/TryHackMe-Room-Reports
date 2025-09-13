@@ -1,0 +1,127 @@
+##Section 1
+
+DNS: Remembering Addresses
+
+DNS (Domain Name System) maps domain names to IPs (so you don’t memorize numbers). It runs at the Application layer (uses UDP/TCP port 53). Common records:
+
+  A -> hostname -> IPv4
+  AAAA -> hostname -> IPv6
+  CNAME -> alias -> canonical hostname
+  MX -> mail servers for a domain
+
+Example: nslookup www.example.com queries for A and AAAA records; responses return the IPv4 and IPv6 addresses.
+
+##Section 2
+
+WHOIS
+
+Domain ownership -> When you register a domain (e.g., example.com), you control its DNS records (A, AAAA, MX, CNAME, etc.).
+WHOIS -> Public database showing who owns a domain (creation date, registrar, contact info).
+Privacy -> You can mask your personal details with privacy/proxy services.
+Tools -> WHOIS lookups can be done via web services or the whois CLI.
+
+##Section 3
+
+HTTP(S): Accessing the Web
+
+HTTP/HTTPS (HYPER TEXT TRANSFER PROTOCOL/SECURE) let browsers and servers exchange data securely using defined methods.
+
+GET -> fetch data
+POST -> send data
+PUT -> create/update
+DELETE -> remove
+Uses TCP 80/443
+Extra info exchanged (headers, server details)
+Inspectable via Wireshark or telnet
+
+##Section 4
+
+FTP: Transferring Files
+
+FTP (File Transfer Protocol) is a protocol designed for efficient file transfer, using commands and separate connections for control and data.
+
+FTP uses TCP port 21 for commands, separate connections for data transfer.
+
+Common commands:
+USER -> enter username
+PASS -> enter password
+RETR -> download file
+STOR -> upload file
+Example session steps:
+Connected with ftp 10.10.229.248
+Logged in as anonymous (no password needed)
+Used ls -> saw coffee.txt, flag.txt, tea.txt
+Switched to ASCII mode with type ascii
+Downloaded file with get coffee.txt
+
+In Wireshark:
+Client commands differ from server execution (ls -> LIST)
+Directory listings and file transfers each happen on separate data connections.
+
+##Section 5
+
+SMTP: Sending Email
+
+SMTP (Simple Mail Transfer Protocol) defines how email is sent between clients and servers using a command-driven session.
+Default port: TCP 25
+
+Key commands:
+HELO/EHLO -> start session
+MAIL FROM -> sender’s address
+RCPT TO -> recipient’s address
+DATA -> begin email content
+. -> end of message
+QUIT -> close connection
+
+Example via telnet:
+Connected with telnet 10.10.229.248 25
+
+Session: HELO -> MAIL FROM -> RCPT TO -> DATA -> email body -> . -> QUIT
+Server confirms acceptance with 250 OK
+
+
+##Section 6
+
+POP3: Receiving Email
+
+POP3 (Post Office Protocol version 3) lets a mail client download messages from a server (plain-text, port 110 by default).
+Purpose: retrieve email from server to client.
+Default port: 110 (unencrypted — traffic including passwords can be sniffed).
+
+Common commands:
+USER <name> — identify user
+PASS <pw> — send password
+STAT — message count + total size
+LIST — list messages + sizes
+RETR <n> — download n
+DELE <n> — delete n
+QUIT — end session (applies deletions)
+
+Example: telnet <server> 110 -> USER -> PASS -> STAT/LIST -> RETR 3 -> QUIT.
+
+
+##Section 7
+
+IMAP: Synchronizing Email
+
+IMAP (Internet Message Access Protocol) keeps mail on the server so you can sync messages across multiple devices (default port 143).
+Purpose: sync read/move/delete status across clients — good for using mail on phone + laptop.
+Default port: 143 (use STARTTLS/IMAPS for encryption).
+Key commands: LOGIN, SELECT <mailbox>, FETCH <msg>, MOVE, COPY, LOGOUT.
+Behavior: messages stay on server (unlike POP3 which typically downloads/removes).
+
+Example: telnet -> LOGIN strategos -> SELECT inbox -> FETCH 3 body[] -> LOGOUT returned the stored email.
+
+##Section 8
+
+Conclusion
+
+Protocol	Transport Protocol	Default Port Number
+TELNET	    TCP                	23
+DNS	        UDP or TCP	        53
+HTTP	      TCP                	80
+HTTPS      	TCP	                443
+FTP	        TCP	                21
+SMTP	      TCP	                25
+POP3	      TCP                	110
+IMAP	      TCP	                143
