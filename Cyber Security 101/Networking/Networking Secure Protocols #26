@@ -118,3 +118,11 @@ VPN (Virtual Private Network):
 Hands-On Challenge Tip:
   Use chromium --ssl-key-log-file=~/ssl-key.log to log TLS session keys.
   Load ssl-key.log in Wireshark to decrypt TLS traffic and inspect credentials.
+
+Decrypting TLS Traffic in Wireshark to Extract Credentials
+  
+  Capture & Decrypt: Open the .pcapng file in Wireshark and configure TLS decryption using the ssl-key.log file (Preferences → Protocols → TLS → (Pre)-Master-Secret log filename).
+  Search for Sensitive Info: Use Ctrl+F to search for keywords like login.
+  Follow Stream: Right-click the relevant packet → Follow → HTTP/2 Stream to view the full request/response.
+  Decode URL Encoding: Convert URL-encoded characters (e.g., %7B → {) to reveal readable credentials.
+  Result: TLS-encrypted traffic becomes readable, allowing analysis of login information when the decryption key is available.
