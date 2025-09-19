@@ -15,3 +15,106 @@ Certificates:
   Trusted CA certificates preinstalled in browsers/OS.
   Free option: Let’s Encrypt.
   Self-signed certs work but don’t guarantee authenticity.
+
+##Section 3
+
+HTTPS
+
+HTTP basics: Uses TCP (port 80), traffic sent in cleartext → easy to intercept in Wireshark.
+Normal flow: Domain resolved → TCP 3-way handshake → HTTP requests (e.g., GET /).
+
+HTTPS flow:
+  TCP handshake
+  TLS session setup (certificates + encryption)
+  Encrypted HTTP communication (port 443).
+
+Visibility: Wireshark shows only “Application Data” unless you have the TLS private key.
+Key takeaway: TLS secures HTTP without changing TCP/IP or HTTP itself — just adds encryption in the middle.
+
+##Section 4
+
+SMTPS, POP3S, and IMAPS
+
+Adding TLS works the same way as HTTPS, traffic is encrypted without changing how the protocol itself works.
+
+Naming convention: add S -> SMTP -> SMTPS, POP3 -> POP3S, IMAP -> IMAPS.
+
+Default ports (insecure -> secure):
+  HTTP -> 80 -> 443 (HTTPS)
+  SMTP -> 25 -> 465/587 (SMTPS)
+  POP3 -> 110 -> 995 (POP3S)
+  IMAP -> 143 -> 993 (IMAPS)
+
+Key point: TLS adds confidentiality & integrity, no protocol redesign needed.
+
+##Section 5
+
+SSH
+
+Purpose: Replaces Telnet; all traffic is encrypted, preventing credential theft.
+History: SSH-1 (1995), SSH-2 (1996), OpenSSH (1999, open source).
+
+Key benefits:
+  Secure authentication: Password, public key, and 2FA.
+  Confidentiality: End-to-end encryption; detects new server keys.
+  Integrity: Ensures exchanged data isn’t modified.
+  Tunneling: Routes other protocols securely (VPN-like).
+  X11 Forwarding: Use GUI applications over the network.
+
+Usage: ssh username@hostname (password) or ssh hostname (if public key is utilized).
+Default port: 22 (Telnet uses 23).
+
+##Section 6
+
+SFTP and FTPS
+
+SFTP (SSH File Transfer Protocol):
+Part of the SSH suite; uses port 22.
+Commands similar to Unix shell: get, put, etc.
+Secure by design, no separate certificate needed.
+
+FTPS (File Transfer Protocol Secure):
+FTP over TLS; usually uses port 990.
+Requires TLS certificates for encryption.
+Uses separate control and data connections; can be firewall-sensitive.
+
+Note: Exercise covered mapping standard ports to secure equivalents, e.g., HTTP -> HTTPS (80->443), SMTP -> SMTPS (25->587).
+
+##Section 6
+
+VPN
+
+Purpose: Connect remote offices or users to the main branch as if locally connected.
+
+Virtual & Private:
+  Virtual: Uses Internet infrastructure to create a private “tunnel.”
+  Private: Encrypts all traffic to prevent disclosure or alteration.
+  Setup Requirements: Internet connection, VPN server at main branch, VPN client at remote site or device.
+
+Traffic Routing:
+  VPN tunnels encrypt traffic (visible only to VPN endpoints).
+  Internet traffic may appear from the VPN server’s IP, useful for bypassing geo-restrictions.
+
+Limitations:
+  Some VPNs only allow private network access, not full traffic routing.
+  VPN leaks can expose actual IP, DNS leak tests may be needed.
+
+##Section 7
+
+Closing Notes
+
+TLS (Transport Layer Security):
+  Secures many protocols by adding encryption; secured versions get an S (e.g., HTTPS, SMTPS, POP3S).
+  Ensures confidentiality and integrity without modifying underlying protocols.
+
+SSH (Secure Shell):
+  Provides secure remote access, file transfer (SFTP), and tunneling.
+  Can secure traffic of plaintext protocols through SSH tunnels.
+
+VPN (Virtual Private Network):
+  Connects remote sites or devices as if on the same local network.
+  Encrypts traffic between VPN client and server; can route Internet traffic via VPN server.
+
+Hands-On Challenge Tip:
+  Use chromium --ssl-key-log-file=~/ssl-key.log to log TLS session keys.
+  Load ssl-key.log in Wireshark to decrypt TLS traffic and inspect credentials.
