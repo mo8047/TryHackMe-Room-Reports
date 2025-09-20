@@ -1,0 +1,166 @@
+##Section 1
+
+Tool Overview
+
+Purpose: Wireshark is a packet analyzer used to troubleshoot networks, detect anomalies, and study protocol details. It is not an IDS and does not modify packets. 
+Effective use depends on the analyst’s knowledge.
+
+GUI Sections:
+  Toolbar: Menus for filtering, sorting, exporting, and merging packets.
+  Display Filter Bar: Query and filter traffic.
+  Recent Files: Quick access to previously analyzed captures.
+  Capture Filter & Interfaces: Select network interfaces for sniffing.
+  Status Bar: Shows profile, packet info, and capture status.
+
+Packet Panes:
+  Packet List Pane: Summarizes packets (source/dest, protocol, info).
+  Packet Details Pane: Protocol-level breakdown of selected packets.
+  Packet Bytes Pane: Hex and ASCII representation of packets.
+  Packet Coloring: Default and custom coloring highlights protocols and anomalies. Temporary rules last per session; permanent rules are saved in profiles.
+  Traffic Sniffing: Start/stop/restart capture with blue/red/green buttons; status bar shows interface and packet count.
+  Merging PCAPs: Combine multiple capture files via File → Merge, then save the merged file.
+  File Details: View capture metadata, including hash, capture time, comments, and interface via Statistics → Capture File Properties.
+
+Exercise Example (Exercise.pcapng):
+Capture file comment (flag): TryHackMe_Wireshark_Demo
+Total packets: 58620
+SHA256 hash: f446de335565fb0b0ee5e5a3266703c778b2f3dfad7efeaeccb2da5641a6d6eb
+
+##Section 2
+
+Packet Dissection
+
+Purpose: Packet dissection (protocol dissection) decodes packets layer by layer using the OSI model to reveal detailed protocol and application data. Custom dissectors can also be written.
+
+Packet Layers (example: HTTP packet):
+Frame/Packet (Layer 1) – Physical layer details of the captured frame.
+Source/Destination MAC (Layer 2) – Data Link layer addresses.
+Source/Destination IP (Layer 3) – Network layer IP addresses.
+Protocol/Ports (Layer 4) – Transport layer info (TCP/UDP) and ports.
+Protocol Errors – TCP segments needing reassembly.
+Application Protocol (Layer 5) – Protocol-specific info, e.g., HTTP, FTP.
+Application Data – Actual payload or message content.
+
+Using Wireshark: Clicking a field in the details pane highlights it in the packet bytes pane, helping map decoded fields to raw data.
+
+Exercise Example (file: Exercise.pcapng):
+Packet 38 under HTTP uses?. eXtensible Markup Language (XML).
+Arrival date:?. 05/13/2004
+TTL value:?. 47
+TCP payload?. size: 424
+E-tag value:?. 9a01a-4696-7e354b00
+
+##Section 3
+
+Packet Navigation
+
+Wireshark Packet Numbers and Navigation
+Packet Numbers: Every captured packet is assigned a unique number for tracking and navigation.
+Go to Packet: Navigate to specific packets using the Go menu or toolbar; useful for following conversations or investigating events.
+Finding Packets
+
+Search Methods: Use Edit -> Find Packet to locate packets by:
+
+  Display filter
+  Hex
+  String
+  Regex
+
+Search Fields: You can search within the packet list, details, or bytes panes. Searches are case-insensitive by default but can be configured.
+
+Marking & Commenting
+  Mark Packets: Highlight packets of interest for analysis or export. Marks are session-specific (lost on file close).
+  Packet Comments: Add persistent notes to packets for future reference; stored within the capture file.
+
+Exporting Packets and Objects
+  Export Packets: Save selected packets to a new file for focused analysis.
+  Export Objects: Extract files transmitted over protocols like HTTP, SMB, TFTP, IMF, DICOM.
+
+Time Display Format
+Default: Seconds since beginning of capture.
+Recommended: UTC time for easier chronological analysis (View -> Time Display Format).
+
+Expert Info
+Purpose: Highlights potential issues or anomalies for faster analysis.
+
+Severity Levels:
+  Chat (Blue) – Normal workflow info
+  Note (Cyan) – Notable events, e.g., application errors
+  Warn (Yellow) – Warnings, e.g., unusual error codes
+  Error (Red) – Critical problems, e.g., malformed packets
+
+Info Groups: Checksum errors, deprecated protocol usage, comments, malformed packets, etc.
+Access via Analyse -> Expert Information or the status bar.
+
+Exercise (Exercise.pcapng) Highlights
+Search "r4w" in packet details -> Artist 1: r4w8173
+Packet 12 comments -> MD5 hash: 911cd574a42865a956ccde2d04495ebf
+.txt file inside capture -> Alien's name: PACKETMASTER
+Expert info -> Number of warnings: 1636
+
+##Section 4
+
+Packet Filtering
+
+GUI Overview
+Toolbar: Menus, shortcuts, filtering, exporting, merging.
+Display Filter Bar: Query and filter packets.
+Capture Filter & Interfaces: Select sniffing points.
+Status Bar: Shows packet statistics and capture status.
+Recent Files: Quick access to previously loaded captures.
+
+Packet Analysis
+Packet List Pane: Summary of each packet (source, destination, protocol).
+Packet Details Pane: Layer-by-layer protocol breakdown.
+Packet Bytes Pane: Hex and ASCII representations.
+
+Packet Dissection
+Wireshark decodes packets based on OSI layers:
+Layer 1: Frame/packet information.
+Layer 2: Source/Destination MAC addresses.
+Layer 3: IP addresses.
+Layer 4: Protocol, ports, TCP/UDP details.
+Layer 5: Application protocol (HTTP, FTP, SMB, etc.).
+Layer 6–7: Application-specific data and payloads.
+
+Filtering & Stream Analysis
+Display Filters: Narrow down packets to specific protocols or conversations.
+Conversation Filter: Shows all packets for an IP/port pair.
+Follow Stream: Reconstruct application-level data (HTTP, TCP, UDP).
+Apply as Column: Add specific fields as columns for easier analysis.
+
+Additional Tools
+Packet marking and comments.
+Export packets or objects (files) from the capture.
+Expert Info: Highlights warnings, errors, and notable events.
+
+Exercise Summary (Exercise.pcapng)
+
+File Information
+Capture file comment (flag): TryHackMe_Wireshark_Demo
+Total number of packets: 58620
+SHA256 hash: f446de335565fb0b0ee5e5a3266703c778b2f3dfad7efeaeccb2da5641a6d6eb
+
+Packet Dissection
+Packet 38:
+Markup language: eXtensible Markup Language
+Arrival date: 05/13/2004
+TTL value: 47
+TCP payload size: 424
+E-tag value: 9a01a-4696-7e354b00
+
+Packet Content & Expert Info
+Artist 1 (from string "r4w"): r4w8173
+Packet 12 comment (MD5 hash): 911cd574a42865a956ccde2d04495ebf
+Alien name in .txt file: PACKETMASTER
+Number of warnings in Expert Info: 1636
+
+Filtering & Streams
+
+Packet 4 – HTTP filter:
+Filter query: http
+Displayed packets: 1089
+
+Packet 33790 – Follow HTTP Stream:
+Total number of artists: 3
+Second artist: Blad3
