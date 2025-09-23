@@ -7,7 +7,7 @@ The following commands are an introductory to how to use tcpdump in filtering
 tcpdump -i INTERFACE	Captures packets on a specific network interface
 tcpdump -w FILE	Writes captured packets to a file
 tcpdump -r FILE	Reads captured packets from a file
-tcpdump -c COUNT	Captures a specific number of packets
+tcpdump -c COUNT	Captures a particular number of packets
 tcpdump -n	Don’t resolve IP addresses
 tcpdump -nn	Don’t resolve IP addresses and don’t resolve protocol numbers
 tcpdump -v	Verbose display; verbosity can be increased with -vv and -vvv
@@ -16,7 +16,7 @@ tcpdump -v	Verbose display; verbosity can be increased with -vv and -vvv
 
 Filtering Expressions
 
-There are multiple ways to filter using 'tcpdump', those include Filtering by Host, filtering by Port, Filtering by Protocol and we also have tha capability of using logocal operations to 
+There are multiple ways to filter using 'tcpdump', those include Filtering by Host, filtering by Port, Filtering by Protocol, and we also have the capability of using logical operations to 
 modify our filtering command further. Those include (and, or, not)
 
 tcpdump host IP or tcpdump host HOSTNAME = Filters packets by IP address or hostname
@@ -27,4 +27,4 @@ tcpdump src port PORT_NUMBER = Filters packets by the specified source port numb
 tcpdump dst port PORT_NUMBER = Filters packets by the specified destination port number
 tcpdump PROTOCOL = Filters packets by protocol; examples include ip, ip6, and icmp
 
-![Step](https://github.com/mo8047/TryHackMe-Room-Reports/blob/main/Cyber%20Security%20101/Networking/Tcpdump%3A%20The%20Basics%20%2328/Picture1.png)
+![Pic](Picture1.png)
