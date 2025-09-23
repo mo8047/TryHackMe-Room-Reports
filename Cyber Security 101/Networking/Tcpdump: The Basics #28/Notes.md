@@ -1,4 +1,4 @@
-##Section 1
+# Section 1
 
 Basic Packet Capture
 
@@ -12,7 +12,7 @@ tcpdump -n	Don’t resolve IP addresses
 tcpdump -nn	Don’t resolve IP addresses and don’t resolve protocol numbers
 tcpdump -v	Verbose display; verbosity can be increased with -vv and -vvv
 
-##Section 2
+# Section 2
 
 Filtering Expressions
 
@@ -27,4 +27,4 @@ tcpdump src port PORT_NUMBER = Filters packets by the specified source port numb
 tcpdump dst port PORT_NUMBER = Filters packets by the specified destination port number
 tcpdump PROTOCOL = Filters packets by protocol; examples include ip, ip6, and icmp
 
-![](https://github.com/mo8047/TryHackMe-Room-Reports/blob/main/Cyber%20Security%20101/Networking/Tcpdump%3A%20The%20Basics%20%2328/Picture1.png)
+![](Picture1.png)
