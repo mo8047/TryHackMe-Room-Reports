@@ -27,4 +27,4 @@ tcpdump src port PORT_NUMBER = Filters packets by the specified source port numb
 tcpdump dst port PORT_NUMBER = Filters packets by the specified destination port number
 tcpdump PROTOCOL = Filters packets by protocol; examples include ip, ip6, and icmp
 
-![Pic](Picture1.png)
+![Pic](../Picture1.png)
