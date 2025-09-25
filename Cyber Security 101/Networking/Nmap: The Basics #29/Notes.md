@@ -26,5 +26,12 @@ To find this command I used the -sL to list the IP addresses and took out the la
 ![](Picture1.png) Command 
 ![](Picture2.png) Answer
 
+**What I Learned**
+
+1. -sn is more flexible than normal ping.
+2. /27 subnet = 32 addresses (192.168.0.1 → 192.168.0.31).
+3. -sL lets me preview targets before launching scans.
+4. Local scans reveal MAC addresses, remote scans don’t.
+
 # Section 2
 
