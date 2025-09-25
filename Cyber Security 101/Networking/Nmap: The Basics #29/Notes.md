@@ -8,15 +8,15 @@ Nmap has the '-sn' option which stands for ping scan but this isn't limited as t
 # To scan a local network using Nmap
 
 Usually to scan a local network we use the arp-scan because it only works on local networks but nmap isn't limited to.
-To scan a local network we use the following command 'nmap -sn ip address' using this command it will also shoe us the MAC address of the device because it's a local device (Connected through ethernet or wifi). 
+To scan a local network we use the following command **'nmap -sn ip address'** using this command it will also shoe us the MAC address of the device because it's a local device (Connected through ethernet or wifi). 
 
 # To scan a remote network
 
-To scan a remote network we use the same command for the Local network scan and this is also what makes using Nmap unique it's versatility and convenience.
+To scan a remote network we use the same command for the Local network scan and this is also what makes using Nmap unique, its versatility and convenience.
 To run a Remote scan we'd usually use the ping command but the ping command won't give information if the target's system has a firewall setup.
 
-Nmap also offers a List scan option '-sL'. This scan only lists the targets to scan without scanning them.
-For example 'nmap -sL 192.168.0.1/24' will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
+Nmap also offers a List scan option **'-sL'**. This scan only lists the targets to scan without scanning them.
+For example **'nmap -sL 192.168.0.1/24'** will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
 
 
 Task:What is the last IP address that will be scanned when your scan target is 192.168.0.1/27?
