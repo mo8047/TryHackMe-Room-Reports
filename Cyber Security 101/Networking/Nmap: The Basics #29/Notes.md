@@ -23,8 +23,8 @@ Task:What is the last IP address that will be scanned when your scan target is 1
 
 To find this command I used the -sL to list the IP addresses and took out the last IP address as the answer.
 
-![](Picture1.png)
-![](Picture2.png)
+![](Picture1.png) Command 
+![](Picture2.png) Answer
 
 # Section 2
 
