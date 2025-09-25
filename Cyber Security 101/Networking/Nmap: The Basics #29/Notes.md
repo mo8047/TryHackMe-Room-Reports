@@ -35,3 +35,41 @@ To find this command I used the -sL to list the IP addresses and took out the la
 
 # Section 2
 
+Port Scanning: Who is listening.
+
+-sT		TCP connect scan – complete three-way handshake
+
+-sS		TCP SYN – only first step of the three-way 			handshake
+
+-sU		UDP scan
+
+-F		Fast mode – scans the 100 most common ports
+
+-p[range]	Specifies a range of port numbers – -p- scans all 		the ports
+
+
+
+Question 1: How many TCP ports are open on the target system at 10.10.219.96?
+
+![](Picture3.png)
+I ran th **-p-** command to go through all the ports and list the most common ones
+![](Picture4.png)
+These were the retrieved ports that were open on the target site
+
+
+Question 2:Find the listening web server on 10.10.219.96 and access it with your browser. What is the flag that appears on its main page?
+
+![](Picture5.png)
+Using the IP address and the port number, I was able to access the website and retrieve the flag
+![](Picture6.png)
+
+# Difficulties faced
+
+1.	Found it difficult to list the IP and port to find the website for the flag in Q2 so I resorted to the hints.
+2.	Understanding the SYN scan, which doesn't complete the handshake and only looks at the ports.
+
+# What I learned
+
+How to use the different commands and flags to retrieve vital data without being noticed. And alternative commands to telnet.
+
+
