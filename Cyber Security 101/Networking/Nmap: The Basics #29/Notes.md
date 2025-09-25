@@ -21,7 +21,7 @@ For example **'nmap -sL 192.168.0.1/24'** will list the 256 targets that will be
 
 Task:What is the last IP address that will be scanned when your scan target is 192.168.0.1/27?
 
-To find this command I used the -sL to list the IP addresses and took out the last IP address as the answer.
+To find this command, I used the -sL to list the IP addresses and took out the last IP address as the answer.
 
 ![](Picture1.png) Command 
 ![](Picture2.png) Answer
@@ -52,7 +52,7 @@ Port Scanning: Who is listening.
 Question 1: How many TCP ports are open on the target system at 10.10.219.96?
 
 ![](Picture3.png)
-I ran th **-p-** command to go through all the ports and list the most common ones
+I ran the **-p-** command to go through all the ports and list the most common ones
 ![](Picture4.png)
 These were the retrieved ports that were open on the target site
 
@@ -60,16 +60,20 @@ These were the retrieved ports that were open on the target site
 Question 2:Find the listening web server on 10.10.219.96 and access it with your browser. What is the flag that appears on its main page?
 
 ![](Picture5.png)
-Using the IP address and the port number, I was able to access the website and retrieve the flag
+Using the IP address and the port number, I was able to access the website and retrieve the flag.
+The reason I used port 8008 was that it was identified as an HTTP
 ![](Picture6.png)
 
 # Difficulties faced
 
-1.	Found it difficult to list the IP and port to find the website for the flag in Q2 so I resorted to the hints.
+1.	Found it difficult to list the IP and port to find the website for the flag in Q2, so I resorted to the hints.
 2.	Understanding the SYN scan, which doesn't complete the handshake and only looks at the ports.
 
 # What I learned
 
-How to use the different commands and flags to retrieve vital data without being noticed. And alternative commands to telnet.
-
+1. Difference between TCP Connect (-sT) and SYN (-sS) scans.
+2. How to scan all ports (-p-) and fast scans (-F).
+3. How to identify and access services running on open ports.
+4. Alternative tools/commands for port checks, e.g., telnet.
+5. Importance of stealth vs full handshake in network scanning.
 
