@@ -95,12 +95,12 @@ And to force the scan we use **-sS** to run a simple SYN only handshake in TCP p
 
 If a scan host is appearing to be down we can use the **-Pn** functionality.
 
--O	OS detection
--sV	Service and version detection
--A	OS detection, version detection, and other additions
--Pn	Scan hosts that appear to be down
+1. -O	OS detection
+2. -sV	Service and version detection
+3. -A	OS detection, version detection, and other additions
+4. -Pn	Scan hosts that appear to be down
 
-Question: What is the name and detected version of the web server running on 10.10.167.26?
+# Question: What is the name and detected version of the web server running on 10.10.167.26?
 
 ![](Picture7.png)
 
