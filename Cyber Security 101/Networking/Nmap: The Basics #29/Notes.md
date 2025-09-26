@@ -118,3 +118,21 @@ and the answer was the HTTP packet.
 1.	How to use Nmap's functionality to find different target computer specifications.
 
 
+# Section 4
+
+Timing: How Fast is Fast
+
+1.	-T<0-5>		Timing template – paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5)
+
+2. --min-parallelism <numprobes> and --max-parallelism <numprobes>		Minimum and maximum number of parallel probes
+
+3. --min-rate <number> and --max-rate <number>		Minimum and maximum rate (packets/second)
+
+4. --host-timeout		Maximum amount of time to wait for a target host
+
+# Question: What is the non-numeric equivalent of -T4?
+
+-T aggressive
+
+
+
