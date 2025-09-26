@@ -163,36 +163,36 @@ The following commands to output the scan report
 # In conclusion
 
 Option	Explanation
--sL	List scan – list targets without scanning
+1. -sL	List scan – list targets without scanning
 
 Host Discovery	
--sn	Ping scan – host discovery only
+1. -sn	Ping scan – host discovery only
 
 Port Scanning	
--sT	TCP connect scan – complete three-way handshake
--sS	TCP SYN – only first step of the three-way handshake
--sU	UDP Scan
--F	Fast mode – scans the 100 most common ports
--p[range]	Specifies a range of port numbers – -p- scans all the ports
--Pn	Treat all hosts as online – scan hosts that appear to be down
+1. -sT	TCP connect scan – complete three-way handshake
+2. -sS	TCP SYN – only first step of the three-way handshake
+3. -sU	UDP Scan
+4. -F	Fast mode – scans the 100 most common ports
+5. -p[range]	Specifies a range of port numbers – -p- scans all the ports
+6. -Pn	Treat all hosts as online – scan hosts that appear to be down
 
 Service Detection	
--O	OS detection
--sV	Service version detection
--A	OS detection, version detection, and other additions
+1. -O	OS detection
+2. -sV	Service version detection
+3. -A	OS detection, version detection, and other additions
 
 Timing	
--T<0-5>	Timing template – paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5)
---min-parallelism <numprobes> and --max-parallelism <numprobes>	Minimum and maximum number of parallel probes
---min-rate <number> and --max-rate <number>	Minimum and maximum rate (packets/second)
---host-timeout	Maximum amount of time to wait for a target host
+1. -T<0-5>	Timing template – paranoid (0), sneaky (1), polite (2), normal (3), aggressive (4), and insane (5)
+2. --min-parallelism <numprobes> and --max-parallelism <numprobes>	Minimum and maximum number of parallel probes
+3. --min-rate <number> and --max-rate <number>	Minimum and maximum rate (packets/second)
+4. --host-timeout	Maximum amount of time to wait for a target host
 
 Real-time output	
--v	Verbosity level – for example, -vv and -v4
--d	Debugging level – for example -d and -d9
+1. -v	Verbosity level – for example, -vv and -v4
+2. -d	Debugging level – for example -d and -d9
 
 Report	
--oN <filename>	Normal output
--oX <filename>	XML output
--oG <filename>	grep-able output
--oA <basename>	Output in all major formats
+1. -oN <filename>	Normal output
+2. -oX <filename>	XML output
+3. -oG <filename>	grep-able output
+4. -oA <basename>	Output in all major formats
