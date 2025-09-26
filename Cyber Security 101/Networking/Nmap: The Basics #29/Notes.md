@@ -19,7 +19,7 @@ Nmap also offers a List scan option **'-sL'**. This scan only lists the targets 
 For example **'nmap -sL 192.168.0.1/24'** will list the 256 targets that will be scanned. This option helps confirm the targets before running the actual scan.
 
 
-Task:What is the last IP address that will be scanned when your scan target is 192.168.0.1/27?
+# Question:What is the last IP address that will be scanned when your scan target is 192.168.0.1/27?
 
 To find this command, I used the -sL to list the IP addresses and took out the last IP address as the answer.
 
@@ -49,7 +49,7 @@ Port Scanning: Who is listening.
 
 
 
-Question 1: How many TCP ports are open on the target system at 10.10.219.96?
+# Question 1: How many TCP ports are open on the target system at 10.10.219.96?
 
 ![](Picture3.png)
 I ran the **-p-** command to go through all the ports and list the most common ones
@@ -57,7 +57,7 @@ I ran the **-p-** command to go through all the ports and list the most common o
 These were the retrieved ports that were open on the target site
 
 
-Question 2:Find the listening web server on 10.10.219.96 and access it with your browser. What is the flag that appears on its main page?
+# Question 2:Find the listening web server on 10.10.219.96 and access it with your browser. What is the flag that appears on its main page?
 
 ![](Picture5.png)
 Using the IP address and the port number, I was able to access the website and retrieve the flag.
