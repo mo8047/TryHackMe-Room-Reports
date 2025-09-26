@@ -135,4 +135,29 @@ Timing: How Fast is Fast
 -T aggressive
 
 
+# Section 5
+
+Output: Controlling What You See
+
+**Verbosity and Debugging**
+
+By adding -v we enable verbosity in the command
+
+and to increase the level of verbosity we can define the level in the command by entering the number we please. e.g. -vvv or -v4
+
+To use debugging level output we use -d and the maximum level we can specify is -d9
+
+**Saving Scan Report**
+
+The following commands to output the scan report
+
+-oN <filename> - Normal output
+-oX <filename> - XML output
+-oG <filename> - grep-able output (useful for grep and awk)
+-oA <basename> - Output in all major formats
+
+# Question: What option must you add to your nmap command to enable debugging?
+
+-d
+
 
