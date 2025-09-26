@@ -77,3 +77,44 @@ The reason I used port 8008 was that it was identified as an HTTP
 4. Alternative tools/commands for port checks, e.g., telnet.
 5. Importance of stealth vs full handshake in network scanning.
 
+# Section 3
+
+**Version Detection: Extract More Information**
+
+**OS Detection**
+
+To enable OS detection we run  **-O**
+
+**Service and Version Detection**
+
+To run service and version detection we use **-sV**
+
+To run both OS detection and version and service detection we can use the **-A** option 
+
+And to force the scan we use **-sS** to run a simple SYN only handshake in TCP protocol.
+
+If a scan host is appearing to be down we can use the **-Pn** functionality.
+
+-O	OS detection
+-sV	Service and version detection
+-A	OS detection, version detection, and other additions
+-Pn	Scan hosts that appear to be down
+
+Question: What is the name and detected version of the web server running on 10.10.167.26?
+
+![](Picture7.png)
+
+To solve this question I used the -A functionality because I didn't know which functionalities exactly should I used so I used **-A** to combine both the **-O** and **-sV** and look for the answer line by line
+
+and the answer was the HTTP packet.
+![](Picture8.png)
+
+# Difficulties faced
+
+1.	Used both OS detection adn service and version detection and foun difficulty in the answer so I resorted to using **-A**
+
+# What I learned
+
+1.	How to use Nmap's functionality to find different target computer specifications.
+
+
