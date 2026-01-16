@@ -38,7 +38,7 @@ Answer: 4,391*6,659 = **23,239,669**
 Answer: 23,239,669-4,391-6,659+1 = **29,228,620**
 
 ## Section 4
-# Diffie-Hellman Key Exchange
+## Diffie-Hellman Key Exchange
 
 Key exchange aims to establish a shared secret between two parties. It is a method that allows two parties to establish a shared secret over an insecure communication
 channel without requiring a pre-existing shared secret and without an observer being able to get this key
@@ -75,3 +75,7 @@ Key = B^a mod p; **9^12 mod 29 = 24**
 4: Knowing that p = 29, b = 17, and you have A from the first question, what is the key calculated by Alice? (key = Ab mod p)
 
 Key = A^b mod p; **7^17 mod 29 = 24**
+
+# Section 5
+## SSH
+
