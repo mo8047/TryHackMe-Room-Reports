@@ -76,6 +76,5 @@ Key = B^a mod p; **9^12 mod 29 = 24**
 
 Key = A^b mod p; **7^17 mod 29 = 24**
 
-# Section 5
-## SSH
+
 
